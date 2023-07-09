@@ -1,0 +1,64 @@
+<!-- job_post.html -->
+{% extends 'base.html' %}
+
+{% block title %}Post a Job{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title text-center mb-4">Post a Job</h5>
+                        <form method="POST" action="{% url 'post_job' %}">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="jobTitle" class="form-label">Job Title</label>
+                                <input type="text" class="form-control" id="jobTitle" name="job_title"
+                                    placeholder="Enter job title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="jobDescription" class="form-label">Job Description</label>
+                                <textarea class="form-control" id="jobDescription" name="job_description"
+                                    placeholder="Enter job description" rows="4" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="jobLocation" class="form-label">Job Location</label>
+                                <input type="text" class="form-control" id="jobLocation" name="job_location"
+                                    placeholder="Enter job location" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="jobSalary" class="form-label">Job Salary (Per Month)</label>
+                                <input type="text" class="form-control" id="jobSalary" name="job_salary"
+                                    placeholder="Enter job salary" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="jobExperience" class="form-label">Job Experience</label>
+                                <input type="text" class="form-control" id="jobExperience" name="job_experience"
+                                    placeholder="Enter job experience" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="jobQualification" class="form-label">Job Qualification</label>
+                                <input type="text" class="form-control" id="jobQualification" name="job_qualification"
+                                    placeholder="Enter job qualification" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="jobType" class="form-label">Job Type</label>
+                                <select class="form-select" id="jobType" name="job_type" required>
+                                    <option value="" selected disabled>Select job type</option>
+                                    <option value="Full-time">Full-time</option>
+                                    <option value="Part-time">Part-time</option>
+                                    <option value="Contract">Contract</option>
+                                    <option value="Freelance">Freelance</option>
+                                </select>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Post Job</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

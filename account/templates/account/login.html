@@ -22,6 +22,10 @@
             align-items: center;
             justify-content: center;
         }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 
@@ -32,14 +36,15 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title text-center mb-4">Login</h5>
-                        <form>
+                        <form method="POST" action="{% url 'login' %}" >
+                            {% csrf_token %}
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                <input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email">
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                                <input type="password" class="form-control" id="password"  required name="password" placeholder="Enter your password">
                             </div>
                             <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-primary">Login</button>
@@ -47,6 +52,7 @@
                         </form>
                     </div>
                 </div>
+                <p class="text-center mt-3">Don't have an account? <a href="{% url 'signup' %}">Signup</a></p>
             </div>
         </div>
     </div>

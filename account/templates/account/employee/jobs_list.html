@@ -1,0 +1,218 @@
+<!-- job_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Job List{% endblock %}
+
+{% block customCSS %}
+<style>
+    /* Custom CSS for job list */
+    .job-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .job-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .job-card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .job-card h3 {
+        color: #333;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .job-card p {
+        color: #777;
+        margin-bottom: 15px;
+    }
+
+    .job-card .btn {
+        background-color: #4c80af;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .job-card .btn:hover {
+        background-color: #336c9f;
+    }
+
+    /* Custom CSS for modal dialog */
+    .modal-dialog {
+        max-width: 500px;
+    }
+
+    .modal-content {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .modal-header {
+        background-color: #4c80af;
+        color: #fff;
+        padding: 20px;
+        border-bottom: none;
+    }
+
+    .modal-title {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 0;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-footer {
+        border-top: none;
+        padding: 20px;
+        text-align: right;
+    }
+
+    .modal-footer .btn {
+        background-color: #4c80af;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .modal-footer .btn:hover {
+        background-color: #336c9f;
+    }
+
+
+    #apply_btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem
+    }
+
+    .spinner-border {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+</style>
+{% endblock customCSS %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center mb-4">Open Jobs</h2>
+            <div class="job-list">
+                {% for job in job_list %}
+                <div class="job-card">
+                    <h3>{{ job.job_title }}</h3>
+                    <p>{{ job.job_location }}</p>
+                    <p>{{ job.job_description }}</p>
+                    <p>Salary: {{ job.job_salary }}</p>
+                    <p>Experience: {{ job.job_experience }}</p>
+                    <p>Qualification: {{ job.job_qualification }}</p>
+                    <button class="btn" data-bs-toggle="modal" data-apply-job-url="{% url 'apply_for_job' job_id=job.id %}"
+                        data-job-title="{{job.job_title}}" data-bs-target="#applyModal">Apply Now</button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="applyModalLabel">Apply for Job - {{ job.job_title }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="resume" class="form-label">Upload Resume (PDF)</label>
+                        <input type="file" class="form-control" id="resume" name="resume" accept=".pdf" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button id="apply_btn" type="submit" class="btn">Apply</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block customJS %}
+<script>
+    $(document).ready(function () {
+        $('#applyModal').on('show.bs.modal', function (event) {
+            let button = $(event.relatedTarget)
+            let apply_for_job_url = button.data('apply-job-url')
+            let job_title = button.data('job-title')
+            console.log(job_title)
+            let modal = $(this)
+            modal.find('.modal-title').text('Apply for Job - ' + job_title)
+
+            console.log(apply_for_job_url)
+            modal_form = modal.find('form')
+            modal_form.attr('action', apply_for_job_url)
+            modal_form.on('submit', function (event) {
+                console.log(this)
+                let submitButton = $(event.target).find('[type="submit"]');
+                console.log(submitButton)
+                submitButton.html(
+                    '<span class="spinner-border spinner-border-sm loader" role="status" aria-hidden="true"></span> Applying...'
+                );
+                event.preventDefault()
+                let form_data = new FormData(this)
+                $.ajax({
+                    url: apply_for_job_url,
+                    type: 'POST',
+                    data: form_data,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        console.log(data)
+                        //<i class="fa-solid fa-check-double"></i>
+                        submitButton.html(`<a href="{% url 'jobs_applied' %}" style="color:#fff;">Check Applied Jobs</a>`)
+                        submitButton.css("background-color" , "#28a745")
+                        $("#popupMessage").find('p').text(`${data}`)
+                        $('#popupMessage').addClass('active');
+                        $('#popupMessage').fadeIn();
+                        // modal.modal('hide')
+                        
+                    },
+                    error: function (err) {
+                        console.log(err)
+                    }
+                })
+            })
+
+
+        })
+    })
+</script>
+
+{% endblock customJS %}

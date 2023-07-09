@@ -1,0 +1,148 @@
+<!-- job_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Job List{% endblock %}
+
+{% block customCSS %}
+<style>
+    /* Custom CSS for job list */
+    .job-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .job-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .job-card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .job-card h3 {
+        color: #333;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .job-card p {
+        color: #777;
+        margin-bottom: 15px;
+    }
+
+    .job-card .btn {
+        background-color: #4c80af;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .job-card .btn:hover {
+        background-color: #336c9f;
+    }
+
+    /* Custom CSS for modal dialog */
+    .modal-dialog {
+        max-width: 500px;
+    }
+
+    .modal-content {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .modal-header {
+        background-color: #4c80af;
+        color: #fff;
+        padding: 20px;
+        border-bottom: none;
+    }
+
+    .modal-title {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 0;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-footer {
+        border-top: none;
+        padding: 20px;
+        text-align: right;
+    }
+
+    .modal-footer .btn {
+        background-color: #4c80af;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .modal-footer .btn:hover {
+        background-color: #336c9f;
+    }
+
+
+    #apply_btn{
+        display: flex;
+        align-items: center;
+        gap:0.5rem
+    }
+
+    .spinner-border {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+</style>
+{% endblock customCSS %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center mb-4">Applied Jobs</h2>
+            <div class="job-list">
+                {% for job in job_list %}
+                <div class="job-card">
+                    <h3>{{ job.job_title }}</h3>
+                    <p>{{ job.job_location }}</p>
+                    <p>{{ job.job_description }}</p>
+                    <p>Salary: {{ job.job_salary }}</p>
+                    <p>Experience: {{ job.job_experience }}</p>
+                    <p>Qualification: {{ job.job_qualification }}</p>
+                    <button class="btn btn-primary">Get Insights</button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
+
+{% block customJS %}
+<script>
+    
+</script>
+
+{% endblock customJS %}

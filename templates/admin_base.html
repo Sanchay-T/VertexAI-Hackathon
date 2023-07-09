@@ -28,8 +28,8 @@
 
         .popup-message {
             position: fixed;
-            max-width : 300px;
-            min-width : 300px;
+            max-width: 300px;
+            min-width: 300px;
             left: 50%;
             transform: translate(-50%);
             background-color: #fff;
@@ -39,12 +39,13 @@
             transition: top 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.1s;
             z-index: 9999;
         }
-        #popupMessage.not-active{
+
+        #popupMessage.not-active {
             top: -25%;
         }
 
-        #popupMessage.active{
-            top:8%;
+        #popupMessage.active {
+            top: 8%;
         }
 
         .popup-content {
@@ -61,11 +62,10 @@
         }
 
 
-        #popupMessage > p {
+        #popupMessage>p {
             color: #666;
             margin-bottom: 20px;
         }
-
     </style>
 
 
@@ -90,28 +90,7 @@
                     <li class="active">
                         <a href="{% url 'dashboard' %}">Dashboard</a>
                     </li>
-                    {% if request.user.user_type == '1' %}
-
-                    {% comment %} For HR {% endcomment %}
-                    <li>
-                        <a href="{% url 'post_job' %}">Post New Job</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'jobs_posted' %}">Jobs Posted</a>
-                    </li>
-
-
-                    {% else %}
-
-                    {% comment %} For Employee {% endcomment %}
-                    <li>
-                        <a href="{% url 'emp_job_list' %}">Apply for Job</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'jobs_applied' %}">Jobs Applied</a>
-                    </li>
-
-                    {% endif %}
+                    
                     <li>
                         <a href="{% url 'logout' %}">Logout</a>
                     </li>
