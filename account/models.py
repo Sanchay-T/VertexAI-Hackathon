@@ -32,6 +32,7 @@ class JobPost(models.Model):
     job_posted_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     job_posted_on = models.DateField(auto_now_add=True)
     job_type = models.CharField(max_length=250, null=False)
+    job_data = models.JSONField(null=True)
 
     def __str__(self):
         return "{}".format(self.job_title)

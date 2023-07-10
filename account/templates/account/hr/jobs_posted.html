@@ -119,7 +119,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="text-center mb-4">Applied Jobs</h2>
+            <h2 class="text-center mb-4">Jobs Posted</h2>
             <div class="job-list">
                 {% for job in job_list %}
                 <div class="job-card">
@@ -129,7 +129,7 @@
                     <p>Salary: {{ job.job_salary }}</p>
                     <p>Experience: {{ job.job_experience }}</p>
                     <p>Qualification: {{ job.job_qualification }}</p>
-                    <button class="btn btn-primary">Get Insights</button>
+                    <a href="{% url 'job_insights' job_id=job.id %}"><button class="btn btn-primary">Get Insights</button></a>
                 </div>
                 {% endfor %}
             </div>
