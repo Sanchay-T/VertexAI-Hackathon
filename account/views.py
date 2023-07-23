@@ -19,7 +19,7 @@ def base_dashboard(request):
     if request.user.is_superuser:
         return render(request , "account/admin/admin_dashboard.html")
     
-    if request.user.user_type == "1":
+    if request.user.user_type == 1:
         return render(request , "account/hr/hr_dashboard.html")
     else:
         return render(request , "account/employee/emp_dashboard.html")
@@ -86,20 +86,31 @@ def login_user(request):
 @login_required(login_url='login')
 def post_job(request):
     if request.method == "POST":
+        print(request.POST)
         job_title = request.POST.get("job_title")
         job_description = request.POST.get("job_description")
         job_location = request.POST.get("job_location")
-        job_salary = request.POST.get("job_salary")
         job_experience = request.POST.get("job_experience")
         job_qualification = request.POST.get("job_qualification")
+        job_company = request.POST.get("job_company")
+        job_salary_range = request.POST.get("job_salary")
+        job_company_info = request.POST.get("job_company_info")
+        job_security = request.POST.get("job_security")
+        flexible_work_arrangements = request.POST.get("flexible_work_arrangements")
+        flexible_work_arrangements = True if flexible_work_arrangements else False
+        print("********")
+        print(flexible_work_arrangements)
+        print("********")
         job_posted_by = request.user
         # job_status = request.POST.get("job_status")
         job_type = request.POST.get("job_type")
 
-        job_post = JobPost.objects.create(job_title=job_title , job_description=job_description , job_location=job_location , job_salary=job_salary , job_experience=job_experience , job_qualification=job_qualification , job_posted_by=job_posted_by , job_type=job_type)
+        company = Company.objects.get(id = job_company)
+
+        job_post = JobPost.objects.create(job_title=job_title , job_description=job_description , job_location=job_location , job_salary_range=job_salary_range , job_experience=job_experience , job_qualification=job_qualification , flexible_work_arrangements = flexible_work_arrangements , company_information = job_company_info , job_posted_by=job_posted_by , job_type=job_type , job_security_information = job_security , company_id=company)
         job_post.save()
-        return redirect("hr_job_list")
-    return render(request , "account/hr/new_job_post.html")
+        return redirect("jobs_posted")
+    return render(request , "account/hr/new_job_post.html" , context={'company_list' : Company.objects.all()})
 
 
 @login_required(login_url='login')
@@ -145,7 +156,7 @@ def apply_for_job(request , job_id):
 
     print(filename)
 
-    threading.Thread(target=vertex_ai_process.extract_name_table , args=[filename]).start()
+    # threading.Thread(target=vertex_ai_process.extract_name_table , args=[filename]).start()
 
     
     return HttpResponse("Applied Successfully.")

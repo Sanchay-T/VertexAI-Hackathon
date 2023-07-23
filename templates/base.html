@@ -90,7 +90,7 @@
                     <li class="active">
                         <a href="{% url 'dashboard' %}">Dashboard</a>
                     </li>
-                    {% if request.user.user_type == '1' %}
+                    {% if request.user.user_type == 1 %}
 
                     {% comment %} For HR {% endcomment %}
                     <li>

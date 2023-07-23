@@ -14,6 +14,10 @@
     "html": ["htm", "html", "django-html"]
   },
 
-  "editor.mouseWheelZoom": true
+  "editor.mouseWheelZoom": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "none"
 
 }
