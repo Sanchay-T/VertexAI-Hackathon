@@ -1,0 +1,63 @@
+[1m> Entering new SQLDatabaseChain chain...
+How many jobs are there?
+SQLQuery:[32m[1mSELECT COUNT(*) FROM account_jobpost;
+SQLResult: [33m[1m[(1,)]
+Answer:
+[34m[1mwandb[39m[22m: Streaming LangChain activity to W&B at https://wandb.ai/zestt/llmapps/runs/v55tdiwg
+[34m[1mwandb[39m[22m: `WandbTracer` is currently in beta.
+Answer:[32m[1mThere is 1 job.
+[1m> Finished chain.
+[1m> Entering new SQLDatabaseChain chain...
+How many users are there?
+SQLQuery:[32m[1mSELECT COUNT(*) FROM account_customuser;
+SQLResult: [33m[1m[(4,)]
+Answer:[32m[1mThere are 4 users.
+[1m> Finished chain.
+[1m> Entering new SQLDatabaseChain chain...
+How many job applications are there?
+SQLQuery:[32m[1mSELECT COUNT(*) FROM account_jobapplication;
+SQLResult: [33m[1m[(12,)]
+Answer:[32m[1mThere are 12 job applications.
+[1m> Finished chain.
+[1m> Entering new SQLDatabaseChain chain...
+How many job applications from Govandi there?
+
+SQLQuery:[32m[1mSELECT COUNT(*) FROM account_jobapplication WHERE job_location = 'Govandi';
+[1m> Entering new SQLDatabaseChain chain...
+How many job applications from Govandi there?
+SQLQuery:[32m[1mSELECT COUNT(*) FROM account_jobapplication WHERE job_location = 'Govandi';
+[1m> Entering new SQLDatabaseChain chain...
+How many job post from Govandi there?
+SQLQuery:[32m[1mSELECT COUNT(*) FROM account_jobpost WHERE job_location = 'Govandi';
+SQLResult: [33m[1m[(1,)]
+Answer:[32m[1mThere is 1 job post from Govandi.
+[1m> Finished chain.
+[1m> Entering new SQLDatabaseChain chain...
+How many jobs from Govandi there?
+SQLQuery:[32m[1mSELECT COUNT(*) FROM account_jobpost WHERE job_location = 'Govandi';
+SQLResult: [33m[1m[(1,)]
+Answer:[32m[1mThere is 1 job from Govandi.
+[1m> Finished chain.
+[1m> Entering new SQLDatabaseChain chain...
+How many jobs from Govandi there?
+SQLQuery:[32m[1mSELECT COUNT(*) FROM account_jobpost WHERE job_location = 'Govandi';
+SQLResult: [33m[1m[(1,)]
+Answer:[32m[1mThere is 1 job from Govandi.
+[1m> Finished chain.
+There is 1 job from Govandi.
+[1m> Entering new SQLDatabaseChain chain...
+How many people applied from Govandi there?
+
+SQLQuery:[32m[1mSELECT COUNT(*) FROM account_jobapplication WHERE job_location = 'Govandi';
+[1m> Entering new SQLDatabaseChain chain...
+How many postings from from Govandi there?
+SQLQuery:[32m[1mSELECT COUNT(*) FROM account_jobpost WHERE job_location = 'Govandi' AND job_location NOT IN (NULL) AND job_location BETWEEN 'Govandi' AND 'Govandi' AND job_location = CAST(job_location AS TEXT) AND job_location IN (SELECT job_location FROM account_jobpost) AND job_location = 'Govandi' AND job_location IS NOT NULL;
+SQLResult: [33m[1m[(0,)]
+Answer:[32m[1mThere are 0 postings from Govandi.
+[1m> Finished chain.
+[1m> Entering new SQLDatabaseChain chain...
+How many postings from from Govandi there?
+SQLQuery:[32m[1mSELECT COUNT(*) FROM account_jobpost WHERE job_location = 'Govandi';
+SQLResult: [33m[1m[(1,)]
+Answer:[32m[1mThere is 1 posting from Govandi.
+[1m> Finished chain.
