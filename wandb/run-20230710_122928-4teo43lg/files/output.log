@@ -1,0 +1,50 @@
+[34m[1mwandb[39m[22m: Streaming LangChain activity to W&B at https://wandb.ai/zestt/langchain-tracing/runs/4teo43lg
+[34m[1mwandb[39m[22m: `WandbTracer` is currently in beta.
+[34m[1mwandb[39m[22m: Please report any issues to https://github.com/wandb/wandb/issues with the tag `langchain`.
+[34m[1mwandb[39m[22m: [33mWARNING[39m Serializing object of type str that is 154791 bytes
+[34m[1mwandb[39m[22m: [33mWARNING[39m Serializing object of type str that is 156185 bytes
+[34m[1mwandb[39m[22m: [33mWARNING[39m Serializing object of type str that is 165235 bytes
+[34m[1mwandb[39m[22m: [33mWARNING[39m Serializing object of type str that is 167063 bytes
+<class 'str'>
+```
+{
+    "Name": "Chiaki Sato",
+    "Summary": "Creative Designer with 5 years of experience in creating graphic designs for big companies.",
+    "Work Experience": [
+        {
+            "Company": "larana, inc",
+            "Position": "Senior Graphic Designer",
+            "Dates": "2019-2020"
+        },
+        {
+            "Company": "lliceria & co.",
+            "Position": "Senior Graphic Designer",
+            "Dates": "2020-present"
+Added Data Successfully.
+<class 'str'>
+```
+{
+    "Name": "Chiaki Sato",
+    "Summary": "Creative Designer with 5 years of experience in creating graphic designs for big companies.",
+    "Work Experience": ["larana, inc | 2019-2020", "lliceria & co. | 2020-preset"],
+    "Years Of Experience": "5 years",
+    "Skills": ["Graphic design", "Computer Programing", "Content Marketing", "Digital Marketing", "Video editing"],
+    "Projects": ["create more than 100 graphic
+<class 'str'>
+```
+{
+    "Name": "Chiaki Sato",
+    "Summary": "Creative Designer with 5 years of experience in creating graphic designs for big companies.",
+    "Work Experience": ["larana, inc | 2019-2020", "lliceria & co. | 2020-preset"],
+    "Years Of Experience": "5 years",
+    "Skills": ["Graphic design", "Computer Programing", "Content Marketing", "Digital Marketing", "Video editing"],
+    "Projects": ["create more than 100 graphic
+<class 'str'>
+```
+{
+    "Name": "Connor Hamilton",
+    "Summary": "Professional Graphic Designer with 10 years of experience in web design, video editing, and marketing.",
+    "Work Experience": "Arowwai Industries, Product Design Manager",
+    "Years Of Experience": "10 years",
+    "Skills": ["Photography", "Web Design", "Video Editing", "Graphic Design", "Marketing"],
+    "Projects": ["Arowwai Industries", "Arowwai Industries", "Arowwai Industries"],

@@ -20,9 +20,19 @@ urlpatterns = [
     # path("job_detail/<int:job_id>/", views.job_detail , name="job_detail"),
     path("apply_for_job/<int:job_id>/", views.apply_for_job , name="apply_for_job"),
     path("jobs_applied/", views.jobs_applied , name="jobs_applied"),
+    path("job_insights/<int:job_id>", views.job_details , name="job_insights"),
 ]
 
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+
+
+
+
+
+

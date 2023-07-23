@@ -4,6 +4,11 @@ from django.urls import reverse
 from django.http import HttpResponse , JsonResponse
 from django.contrib.auth.decorators import login_required
 from .models import *
+import vertex_ai_process
+import threading
+import os
+
+
 
 print("in the views")
 
@@ -105,6 +110,19 @@ def job_list_hr(request):
     }
     return render(request , "account/hr/jobs_posted.html" , context)
 
+@login_required(login_url='login')
+def job_details(request , job_id):
+    job = JobPost.objects.get(id=job_id)
+
+    output = 'vertex_ai_process.process()'
+    print(type(output))
+
+    context = {
+        'job_insight' : output
+    }
+
+    return render(request , "account/job_details.html" , context=context)
+
 
 @login_required(login_url='login')
 def job_list_emp(request):
@@ -114,14 +132,22 @@ def job_list_emp(request):
     }
     return render(request , "account/employee/jobs_list.html" , context = context)
 
-
 @login_required(login_url='login')
 def apply_for_job(request , job_id):
     job = JobPost.objects.get(id=job_id)   
     resume = request.FILES['resume']
-    if JobApplication.objects.filter(job=job , applicant=request.user).exists():
-        return HttpResponse("Job Already Applied.")
-    JobApplication.objects.create(job=job , applicant=request.user , resume = resume ).save()
+    # if JobApplication.objects.filter(job=job , applicant=request.user).exists():
+        # return HttpResponse("Job Already Applied.")
+    job_application = JobApplication.objects.create(job=job , applicant=request.user , resume = resume )
+    job_application.save()
+
+    filename = os.path.basename(job_application.resume.name)
+
+    print(filename)
+
+    threading.Thread(target=vertex_ai_process.extract_name_table , args=[filename]).start()
+
+    
     return HttpResponse("Applied Successfully.")
 
 
