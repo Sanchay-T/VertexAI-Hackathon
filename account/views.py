@@ -5,6 +5,8 @@ from django.http import HttpResponse , JsonResponse
 from django.contrib.auth.decorators import login_required
 from .models import *
 
+print("in the views")
+
 # Create your views here.
 
 @login_required(login_url='login')
