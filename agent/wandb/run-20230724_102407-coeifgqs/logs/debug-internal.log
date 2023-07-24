@@ -1,0 +1,440 @@
+2023-07-24 10:24:07,337 INFO    StreamThr :48486 [internal.py:wandb_internal():86] W&B internal server running at pid: 48486, started at: 2023-07-24 10:24:07.337434
+2023-07-24 10:24:07,338 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status
+2023-07-24 10:24:07,343 INFO    WriterThread:48486 [datastore.py:open_for_write():85] open: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/run-coeifgqs.wandb
+2023-07-24 10:24:07,343 DEBUG   SenderThread:48486 [sender.py:send():369] send: header
+2023-07-24 10:24:07,358 DEBUG   SenderThread:48486 [sender.py:send():369] send: run
+2023-07-24 10:24:08,020 INFO    SenderThread:48486 [dir_watcher.py:__init__():211] watching files in: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files
+2023-07-24 10:24:08,020 INFO    SenderThread:48486 [sender.py:_start_run_threads():1100] run started: coeifgqs with start time 1690174447.337487
+2023-07-24 10:24:08,021 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 10:24:08,021 INFO    SenderThread:48486 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 10:24:08,025 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: check_version
+2023-07-24 10:24:08,025 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: check_version
+2023-07-24 10:24:08,072 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: run_start
+2023-07-24 10:24:08,084 DEBUG   HandlerThread:48486 [system_info.py:__init__():31] System info init
+2023-07-24 10:24:08,084 DEBUG   HandlerThread:48486 [system_info.py:__init__():46] System info init done
+2023-07-24 10:24:08,084 INFO    HandlerThread:48486 [system_monitor.py:start():181] Starting system monitor
+2023-07-24 10:24:08,084 INFO    SystemMonitor:48486 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-07-24 10:24:08,084 INFO    HandlerThread:48486 [system_monitor.py:probe():201] Collecting system info
+2023-07-24 10:24:08,085 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started cpu monitoring
+2023-07-24 10:24:08,085 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started disk monitoring
+2023-07-24 10:24:08,085 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started gpuapple monitoring
+2023-07-24 10:24:08,085 DEBUG   HandlerThread:48486 [system_info.py:probe():195] Probing system
+2023-07-24 10:24:08,087 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started memory monitoring
+2023-07-24 10:24:08,088 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started network monitoring
+2023-07-24 10:24:08,092 DEBUG   HandlerThread:48486 [system_info.py:_probe_git():180] Probing git
+2023-07-24 10:24:08,104 DEBUG   HandlerThread:48486 [system_info.py:_probe_git():188] Probing git done
+2023-07-24 10:24:08,104 DEBUG   HandlerThread:48486 [system_info.py:probe():240] Probing system done
+2023-07-24 10:24:08,105 DEBUG   HandlerThread:48486 [system_monitor.py:probe():210] {'os': 'macOS-13.4.1-arm64-arm-64bit', 'python': '3.11.2', 'heartbeatAt': '2023-07-24T04:54:08.087573', 'startedAt': '2023-07-24T04:54:07.327391', 'docker': None, 'cuda': None, 'args': None, 'state': 'running', 'program': 'agent/selfexecutingagent.ipynb', 'root': '/Users/sanchaythalnerkar/Desktop/HRGPT', 'git': {'remote': 'https://github.com/Sanchay-T/VertexAI-Hackathon.git', 'commit': 'd3d1b683dbd184e4c9712d4e7dbc7e591f3e5b81'}, 'email': 'thalnerkarsanchay17@gmail.com', 'host': '192.168.1.3', 'username': 'sanchaythalnerkar', 'executable': '/Users/sanchaythalnerkar/Desktop/HRGPT/env/bin/python3.11', 'cpu_count': 8, 'cpu_count_logical': 8, 'disk': {'total': 228.27386474609375, 'used': 8.442028045654297}, 'gpuapple': {'type': 'arm', 'vendor': 'Apple'}, 'memory': {'total': 8.0}}
+2023-07-24 10:24:08,105 INFO    HandlerThread:48486 [system_monitor.py:probe():211] Finished collecting system info
+2023-07-24 10:24:08,105 INFO    HandlerThread:48486 [system_monitor.py:probe():214] Publishing system info
+2023-07-24 10:24:08,105 DEBUG   HandlerThread:48486 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-07-24 10:24:08,105 DEBUG   HandlerThread:48486 [system_info.py:_save_pip():67] Saving pip packages done
+2023-07-24 10:24:08,105 INFO    HandlerThread:48486 [system_monitor.py:probe():216] Finished publishing system info
+2023-07-24 10:24:08,108 DEBUG   SenderThread:48486 [sender.py:send():369] send: files
+2023-07-24 10:24:08,109 INFO    SenderThread:48486 [sender.py:_save_file():1354] saving file wandb-metadata.json with policy now
+2023-07-24 10:24:08,110 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:24:08,111 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:24:08,413 DEBUG   SenderThread:48486 [sender.py:send():369] send: telemetry
+2023-07-24 10:24:08,414 DEBUG   SenderThread:48486 [sender.py:send():369] send: telemetry
+2023-07-24 10:24:08,927 INFO    wandb-upload_0:48486 [upload_job.py:push():133] Uploaded file /var/folders/6q/7008j6wx7dxg5_cl11vtq8zr0000gn/T/tmpezlbfs5_wandb/xqdo6mnt-wandb-metadata.json
+2023-07-24 10:24:09,029 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/wandb-summary.json
+2023-07-24 10:24:09,030 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:24:09,030 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/wandb-metadata.json
+2023-07-24 10:24:09,030 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_created():272] file/dir created: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/requirements.txt
+2023-07-24 10:24:11,031 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:24:12,431 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:24:12,775 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 10:24:12,776 DEBUG   SenderThread:48486 [sender.py:send():369] send: history
+2023-07-24 10:24:12,777 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 10:24:12,778 INFO    SenderThread:48486 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 10:24:13,041 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/wandb-summary.json
+2023-07-24 10:24:13,528 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: pause
+2023-07-24 10:24:13,528 INFO    HandlerThread:48486 [handler.py:handle_request_pause():728] stopping system metrics thread or process
+2023-07-24 10:24:13,528 INFO    HandlerThread:48486 [system_monitor.py:finish():190] Stopping system monitor
+2023-07-24 10:24:13,529 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-07-24 10:24:13,529 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-07-24 10:24:13,529 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-07-24 10:24:13,529 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined cpu monitor
+2023-07-24 10:24:13,529 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined disk monitor
+2023-07-24 10:24:13,653 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined gpuapple monitor
+2023-07-24 10:24:13,653 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined memory monitor
+2023-07-24 10:24:13,653 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined network monitor
+2023-07-24 10:24:13,654 DEBUG   SenderThread:48486 [sender.py:send():369] send: telemetry
+2023-07-24 10:24:13,654 DEBUG   SenderThread:48486 [sender.py:send():369] send: stats
+2023-07-24 10:24:16,059 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:24:17,682 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:24:22,700 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:24:23,119 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:24:23,120 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:24:28,114 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:24:28,308 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:24:33,336 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:24:38,124 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:24:38,128 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:24:38,443 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:24:40,168 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/config.yaml
+2023-07-24 10:24:44,947 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:24:47,122 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: resume
+2023-07-24 10:24:47,123 INFO    HandlerThread:48486 [handler.py:handle_request_resume():719] starting system metrics thread or process
+2023-07-24 10:24:47,123 INFO    HandlerThread:48486 [system_monitor.py:start():181] Starting system monitor
+2023-07-24 10:24:47,123 INFO    SystemMonitor:48486 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-07-24 10:24:47,124 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started cpu monitoring
+2023-07-24 10:24:47,124 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started disk monitoring
+2023-07-24 10:24:47,126 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started gpuapple monitoring
+2023-07-24 10:24:47,127 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started memory monitoring
+2023-07-24 10:24:47,128 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started network monitoring
+2023-07-24 10:24:49,968 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:24:53,124 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:24:53,125 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:24:55,431 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:24:55,730 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 10:24:55,732 DEBUG   SenderThread:48486 [sender.py:send():369] send: history
+2023-07-24 10:24:55,733 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 10:24:55,735 INFO    SenderThread:48486 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 10:24:56,240 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/wandb-summary.json
+2023-07-24 10:24:56,326 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: pause
+2023-07-24 10:24:56,326 INFO    HandlerThread:48486 [handler.py:handle_request_pause():728] stopping system metrics thread or process
+2023-07-24 10:24:56,326 INFO    HandlerThread:48486 [system_monitor.py:finish():190] Stopping system monitor
+2023-07-24 10:24:56,326 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined cpu monitor
+2023-07-24 10:24:56,326 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-07-24 10:24:56,327 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined disk monitor
+2023-07-24 10:24:56,327 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-07-24 10:24:56,327 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-07-24 10:24:56,327 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined gpuapple monitor
+2023-07-24 10:24:56,327 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined memory monitor
+2023-07-24 10:24:56,327 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined network monitor
+2023-07-24 10:24:56,327 DEBUG   SenderThread:48486 [sender.py:send():369] send: stats
+2023-07-24 10:24:58,251 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:25:01,367 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:25:04,280 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:25:05,642 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: resume
+2023-07-24 10:25:05,643 INFO    HandlerThread:48486 [handler.py:handle_request_resume():719] starting system metrics thread or process
+2023-07-24 10:25:05,643 INFO    HandlerThread:48486 [system_monitor.py:start():181] Starting system monitor
+2023-07-24 10:25:05,643 INFO    SystemMonitor:48486 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-07-24 10:25:05,643 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started cpu monitoring
+2023-07-24 10:25:05,643 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started disk monitoring
+2023-07-24 10:25:05,644 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started gpuapple monitoring
+2023-07-24 10:25:05,647 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started memory monitoring
+2023-07-24 10:25:05,648 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started network monitoring
+2023-07-24 10:25:05,667 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: pause
+2023-07-24 10:25:05,667 INFO    HandlerThread:48486 [handler.py:handle_request_pause():728] stopping system metrics thread or process
+2023-07-24 10:25:05,667 INFO    HandlerThread:48486 [system_monitor.py:finish():190] Stopping system monitor
+2023-07-24 10:25:05,667 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-07-24 10:25:05,667 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-07-24 10:25:05,668 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-07-24 10:25:05,668 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined cpu monitor
+2023-07-24 10:25:05,669 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined disk monitor
+2023-07-24 10:25:06,279 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined gpuapple monitor
+2023-07-24 10:25:06,279 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined memory monitor
+2023-07-24 10:25:06,279 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined network monitor
+2023-07-24 10:25:06,281 DEBUG   SenderThread:48486 [sender.py:send():369] send: stats
+2023-07-24 10:25:07,290 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:25:07,340 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: resume
+2023-07-24 10:25:07,340 INFO    HandlerThread:48486 [handler.py:handle_request_resume():719] starting system metrics thread or process
+2023-07-24 10:25:07,340 INFO    HandlerThread:48486 [system_monitor.py:start():181] Starting system monitor
+2023-07-24 10:25:07,341 INFO    SystemMonitor:48486 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-07-24 10:25:07,341 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started cpu monitoring
+2023-07-24 10:25:07,341 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started disk monitoring
+2023-07-24 10:25:07,344 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started gpuapple monitoring
+2023-07-24 10:25:07,345 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started memory monitoring
+2023-07-24 10:25:07,346 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started network monitoring
+2023-07-24 10:25:08,127 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:25:08,128 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:25:08,293 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:25:12,066 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: partial_history
+2023-07-24 10:25:12,068 DEBUG   SenderThread:48486 [sender.py:send():369] send: history
+2023-07-24 10:25:12,069 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: summary_record
+2023-07-24 10:25:12,069 INFO    SenderThread:48486 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 10:25:12,311 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/wandb-summary.json
+2023-07-24 10:25:12,858 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: pause
+2023-07-24 10:25:12,858 INFO    HandlerThread:48486 [handler.py:handle_request_pause():728] stopping system metrics thread or process
+2023-07-24 10:25:12,858 INFO    HandlerThread:48486 [system_monitor.py:finish():190] Stopping system monitor
+2023-07-24 10:25:12,858 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-07-24 10:25:12,858 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-07-24 10:25:12,858 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-07-24 10:25:12,858 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined cpu monitor
+2023-07-24 10:25:12,859 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined disk monitor
+2023-07-24 10:25:12,917 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined gpuapple monitor
+2023-07-24 10:25:12,918 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined memory monitor
+2023-07-24 10:25:12,918 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined network monitor
+2023-07-24 10:25:12,918 DEBUG   SenderThread:48486 [sender.py:send():369] send: stats
+2023-07-24 10:25:12,918 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:25:14,323 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:25:17,940 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:25:22,960 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:25:23,131 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:25:23,132 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:25:28,449 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:25:33,472 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:25:38,139 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:25:38,140 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:25:38,439 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:25:39,434 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:25:41,356 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: resume
+2023-07-24 10:25:41,356 INFO    HandlerThread:48486 [handler.py:handle_request_resume():719] starting system metrics thread or process
+2023-07-24 10:25:41,356 INFO    HandlerThread:48486 [system_monitor.py:start():181] Starting system monitor
+2023-07-24 10:25:41,356 INFO    SystemMonitor:48486 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-07-24 10:25:41,357 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started cpu monitoring
+2023-07-24 10:25:41,357 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started disk monitoring
+2023-07-24 10:25:41,358 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started gpuapple monitoring
+2023-07-24 10:25:41,360 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started memory monitoring
+2023-07-24 10:25:41,361 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started network monitoring
+2023-07-24 10:25:41,386 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: pause
+2023-07-24 10:25:41,386 INFO    HandlerThread:48486 [handler.py:handle_request_pause():728] stopping system metrics thread or process
+2023-07-24 10:25:41,387 INFO    HandlerThread:48486 [system_monitor.py:finish():190] Stopping system monitor
+2023-07-24 10:25:41,387 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined cpu monitor
+2023-07-24 10:25:41,387 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined disk monitor
+2023-07-24 10:25:41,387 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-07-24 10:25:41,387 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-07-24 10:25:41,387 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-07-24 10:25:41,873 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined gpuapple monitor
+2023-07-24 10:25:41,873 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined memory monitor
+2023-07-24 10:25:41,873 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined network monitor
+2023-07-24 10:25:41,875 DEBUG   SenderThread:48486 [sender.py:send():369] send: stats
+2023-07-24 10:25:42,564 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: resume
+2023-07-24 10:25:42,564 INFO    HandlerThread:48486 [handler.py:handle_request_resume():719] starting system metrics thread or process
+2023-07-24 10:25:42,564 INFO    HandlerThread:48486 [system_monitor.py:start():181] Starting system monitor
+2023-07-24 10:25:42,565 INFO    SystemMonitor:48486 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-07-24 10:25:42,565 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started cpu monitoring
+2023-07-24 10:25:42,565 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started disk monitoring
+2023-07-24 10:25:42,566 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started gpuapple monitoring
+2023-07-24 10:25:42,566 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started memory monitoring
+2023-07-24 10:25:42,569 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started network monitoring
+2023-07-24 10:25:43,504 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: pause
+2023-07-24 10:25:43,504 INFO    HandlerThread:48486 [handler.py:handle_request_pause():728] stopping system metrics thread or process
+2023-07-24 10:25:43,504 INFO    HandlerThread:48486 [system_monitor.py:finish():190] Stopping system monitor
+2023-07-24 10:25:43,504 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-07-24 10:25:43,504 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined cpu monitor
+2023-07-24 10:25:43,505 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-07-24 10:25:43,505 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-07-24 10:25:43,505 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined disk monitor
+2023-07-24 10:25:43,506 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined gpuapple monitor
+2023-07-24 10:25:43,506 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined memory monitor
+2023-07-24 10:25:43,506 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined network monitor
+2023-07-24 10:25:43,506 DEBUG   SenderThread:48486 [sender.py:send():369] send: stats
+2023-07-24 10:25:44,466 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:25:44,541 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:25:49,560 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:25:53,141 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:25:53,143 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:25:55,449 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:26:00,486 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:26:05,519 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:26:08,148 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:26:08,150 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:26:11,445 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:26:16,475 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:26:21,491 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:26:23,150 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:26:23,151 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:26:27,461 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:26:32,478 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:26:37,197 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: resume
+2023-07-24 10:26:37,198 INFO    HandlerThread:48486 [handler.py:handle_request_resume():719] starting system metrics thread or process
+2023-07-24 10:26:37,198 INFO    HandlerThread:48486 [system_monitor.py:start():181] Starting system monitor
+2023-07-24 10:26:37,198 INFO    SystemMonitor:48486 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-07-24 10:26:37,199 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started cpu monitoring
+2023-07-24 10:26:37,200 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started disk monitoring
+2023-07-24 10:26:37,203 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started gpuapple monitoring
+2023-07-24 10:26:37,204 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started memory monitoring
+2023-07-24 10:26:37,205 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started network monitoring
+2023-07-24 10:26:37,227 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: pause
+2023-07-24 10:26:37,227 INFO    HandlerThread:48486 [handler.py:handle_request_pause():728] stopping system metrics thread or process
+2023-07-24 10:26:37,227 INFO    HandlerThread:48486 [system_monitor.py:finish():190] Stopping system monitor
+2023-07-24 10:26:37,228 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-07-24 10:26:37,228 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-07-24 10:26:37,228 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-07-24 10:26:37,228 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined cpu monitor
+2023-07-24 10:26:37,229 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined disk monitor
+2023-07-24 10:26:37,786 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined gpuapple monitor
+2023-07-24 10:26:37,786 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined memory monitor
+2023-07-24 10:26:37,787 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined network monitor
+2023-07-24 10:26:37,787 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:26:37,787 DEBUG   SenderThread:48486 [sender.py:send():369] send: stats
+2023-07-24 10:26:38,153 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:26:38,154 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:26:38,159 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: resume
+2023-07-24 10:26:38,159 INFO    HandlerThread:48486 [handler.py:handle_request_resume():719] starting system metrics thread or process
+2023-07-24 10:26:38,159 INFO    HandlerThread:48486 [system_monitor.py:start():181] Starting system monitor
+2023-07-24 10:26:38,159 INFO    SystemMonitor:48486 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-07-24 10:26:38,160 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started cpu monitoring
+2023-07-24 10:26:38,160 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started disk monitoring
+2023-07-24 10:26:38,160 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started gpuapple monitoring
+2023-07-24 10:26:38,165 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started memory monitoring
+2023-07-24 10:26:38,167 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started network monitoring
+2023-07-24 10:26:38,712 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:26:39,100 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: pause
+2023-07-24 10:26:39,100 INFO    HandlerThread:48486 [handler.py:handle_request_pause():728] stopping system metrics thread or process
+2023-07-24 10:26:39,100 INFO    HandlerThread:48486 [system_monitor.py:finish():190] Stopping system monitor
+2023-07-24 10:26:39,100 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined cpu monitor
+2023-07-24 10:26:39,101 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-07-24 10:26:39,101 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined disk monitor
+2023-07-24 10:26:39,101 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-07-24 10:26:39,101 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-07-24 10:26:39,101 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined gpuapple monitor
+2023-07-24 10:26:39,101 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined memory monitor
+2023-07-24 10:26:39,101 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined network monitor
+2023-07-24 10:26:39,102 DEBUG   SenderThread:48486 [sender.py:send():369] send: stats
+2023-07-24 10:26:40,719 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:26:43,138 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:26:48,157 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:26:52,779 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:26:53,163 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:26:53,163 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:26:58,466 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:27:03,500 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:27:08,187 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:27:08,189 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:27:08,514 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:27:13,542 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:27:18,562 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:27:23,198 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:27:23,199 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:27:24,499 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:27:29,521 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:27:34,537 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:27:38,203 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:27:38,204 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:27:40,505 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:27:45,516 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:27:50,539 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:27:53,211 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:27:53,212 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:27:56,530 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:28:01,551 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:28:06,578 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:28:06,690 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: resume
+2023-07-24 10:28:06,690 INFO    HandlerThread:48486 [handler.py:handle_request_resume():719] starting system metrics thread or process
+2023-07-24 10:28:06,690 INFO    HandlerThread:48486 [system_monitor.py:start():181] Starting system monitor
+2023-07-24 10:28:06,691 INFO    SystemMonitor:48486 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-07-24 10:28:06,692 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started cpu monitoring
+2023-07-24 10:28:06,692 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started disk monitoring
+2023-07-24 10:28:06,693 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started gpuapple monitoring
+2023-07-24 10:28:06,699 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started memory monitoring
+2023-07-24 10:28:06,702 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started network monitoring
+2023-07-24 10:28:06,749 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: pause
+2023-07-24 10:28:06,750 INFO    HandlerThread:48486 [handler.py:handle_request_pause():728] stopping system metrics thread or process
+2023-07-24 10:28:06,750 INFO    HandlerThread:48486 [system_monitor.py:finish():190] Stopping system monitor
+2023-07-24 10:28:06,750 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-07-24 10:28:06,750 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined cpu monitor
+2023-07-24 10:28:06,750 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-07-24 10:28:06,750 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined disk monitor
+2023-07-24 10:28:06,750 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-07-24 10:28:07,243 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined gpuapple monitor
+2023-07-24 10:28:07,243 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined memory monitor
+2023-07-24 10:28:07,243 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined network monitor
+2023-07-24 10:28:07,244 DEBUG   SenderThread:48486 [sender.py:send():369] send: stats
+2023-07-24 10:28:08,011 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: resume
+2023-07-24 10:28:08,011 INFO    HandlerThread:48486 [handler.py:handle_request_resume():719] starting system metrics thread or process
+2023-07-24 10:28:08,011 INFO    HandlerThread:48486 [system_monitor.py:start():181] Starting system monitor
+2023-07-24 10:28:08,012 INFO    SystemMonitor:48486 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-07-24 10:28:08,013 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started cpu monitoring
+2023-07-24 10:28:08,013 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started disk monitoring
+2023-07-24 10:28:08,013 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started gpuapple monitoring
+2023-07-24 10:28:08,017 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started memory monitoring
+2023-07-24 10:28:08,019 INFO    SystemMonitor:48486 [interfaces.py:start():190] Started network monitoring
+2023-07-24 10:28:08,212 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-24 10:28:08,212 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: stop_status
+2023-07-24 10:28:08,715 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: pause
+2023-07-24 10:28:08,715 INFO    HandlerThread:48486 [handler.py:handle_request_pause():728] stopping system metrics thread or process
+2023-07-24 10:28:08,715 INFO    HandlerThread:48486 [system_monitor.py:finish():190] Stopping system monitor
+2023-07-24 10:28:08,715 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined cpu monitor
+2023-07-24 10:28:08,715 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-07-24 10:28:08,715 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined disk monitor
+2023-07-24 10:28:08,715 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-07-24 10:28:08,715 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined gpuapple monitor
+2023-07-24 10:28:08,715 DEBUG   SystemMonitor:48486 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-07-24 10:28:08,715 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined memory monitor
+2023-07-24 10:28:08,716 INFO    HandlerThread:48486 [interfaces.py:finish():202] Joined network monitor
+2023-07-24 10:28:08,716 DEBUG   SenderThread:48486 [sender.py:send():369] send: stats
+2023-07-24 10:28:09,168 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:28:11,178 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:28:11,734 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:28:14,046 DEBUG   SenderThread:48486 [sender.py:send():369] send: exit
+2023-07-24 10:28:14,046 INFO    SenderThread:48486 [sender.py:send_exit():574] handling exit code: 0
+2023-07-24 10:28:14,046 INFO    SenderThread:48486 [sender.py:send_exit():576] handling runtime: 25
+2023-07-24 10:28:14,047 INFO    SenderThread:48486 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 10:28:14,047 INFO    SenderThread:48486 [sender.py:send_exit():582] send defer
+2023-07-24 10:28:14,047 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 10:28:14,047 INFO    HandlerThread:48486 [handler.py:handle_request_defer():170] handle defer: 0
+2023-07-24 10:28:14,047 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: defer
+2023-07-24 10:28:14,047 INFO    SenderThread:48486 [sender.py:send_request_defer():598] handle sender defer: 0
+2023-07-24 10:28:14,047 INFO    SenderThread:48486 [sender.py:transition_state():602] send defer: 1
+2023-07-24 10:28:14,047 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 10:28:14,047 INFO    HandlerThread:48486 [handler.py:handle_request_defer():170] handle defer: 1
+2023-07-24 10:28:14,047 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: defer
+2023-07-24 10:28:14,047 INFO    SenderThread:48486 [sender.py:send_request_defer():598] handle sender defer: 1
+2023-07-24 10:28:14,047 INFO    SenderThread:48486 [sender.py:transition_state():602] send defer: 2
+2023-07-24 10:28:14,047 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 10:28:14,047 INFO    HandlerThread:48486 [handler.py:handle_request_defer():170] handle defer: 2
+2023-07-24 10:28:14,047 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: defer
+2023-07-24 10:28:14,047 INFO    SenderThread:48486 [sender.py:send_request_defer():598] handle sender defer: 2
+2023-07-24 10:28:14,047 INFO    SenderThread:48486 [sender.py:transition_state():602] send defer: 3
+2023-07-24 10:28:14,047 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 10:28:14,047 INFO    HandlerThread:48486 [handler.py:handle_request_defer():170] handle defer: 3
+2023-07-24 10:28:14,047 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: defer
+2023-07-24 10:28:14,047 INFO    SenderThread:48486 [sender.py:send_request_defer():598] handle sender defer: 3
+2023-07-24 10:28:14,047 INFO    SenderThread:48486 [sender.py:transition_state():602] send defer: 4
+2023-07-24 10:28:14,047 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 10:28:14,047 INFO    HandlerThread:48486 [handler.py:handle_request_defer():170] handle defer: 4
+2023-07-24 10:28:14,047 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: defer
+2023-07-24 10:28:14,047 INFO    SenderThread:48486 [sender.py:send_request_defer():598] handle sender defer: 4
+2023-07-24 10:28:14,047 INFO    SenderThread:48486 [sender.py:transition_state():602] send defer: 5
+2023-07-24 10:28:14,048 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 10:28:14,048 INFO    HandlerThread:48486 [handler.py:handle_request_defer():170] handle defer: 5
+2023-07-24 10:28:14,048 DEBUG   SenderThread:48486 [sender.py:send():369] send: summary
+2023-07-24 10:28:14,048 INFO    SenderThread:48486 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-24 10:28:14,048 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: defer
+2023-07-24 10:28:14,048 INFO    SenderThread:48486 [sender.py:send_request_defer():598] handle sender defer: 5
+2023-07-24 10:28:14,048 INFO    SenderThread:48486 [sender.py:transition_state():602] send defer: 6
+2023-07-24 10:28:14,048 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 10:28:14,048 INFO    HandlerThread:48486 [handler.py:handle_request_defer():170] handle defer: 6
+2023-07-24 10:28:14,048 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: defer
+2023-07-24 10:28:14,048 INFO    SenderThread:48486 [sender.py:send_request_defer():598] handle sender defer: 6
+2023-07-24 10:28:14,048 INFO    SenderThread:48486 [sender.py:transition_state():602] send defer: 7
+2023-07-24 10:28:14,048 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: status_report
+2023-07-24 10:28:14,048 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 10:28:14,048 INFO    HandlerThread:48486 [handler.py:handle_request_defer():170] handle defer: 7
+2023-07-24 10:28:14,049 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: defer
+2023-07-24 10:28:14,049 INFO    SenderThread:48486 [sender.py:send_request_defer():598] handle sender defer: 7
+2023-07-24 10:28:14,189 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/wandb-summary.json
+2023-07-24 10:28:15,048 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: poll_exit
+2023-07-24 10:28:16,397 INFO    SenderThread:48486 [sender.py:transition_state():602] send defer: 8
+2023-07-24 10:28:16,397 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: poll_exit
+2023-07-24 10:28:16,397 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 10:28:16,398 INFO    HandlerThread:48486 [handler.py:handle_request_defer():170] handle defer: 8
+2023-07-24 10:28:16,398 DEBUG   SenderThread:48486 [sender.py:send_request():396] send_request: defer
+2023-07-24 10:28:16,398 INFO    SenderThread:48486 [sender.py:send_request_defer():598] handle sender defer: 8
+2023-07-24 10:28:16,398 INFO    SenderThread:48486 [job_builder.py:build():240] Attempting to build job artifact
+2023-07-24 10:28:16,399 INFO    SenderThread:48486 [job_builder.py:build():259] run is notebook based run
+2023-07-24 10:28:16,399 INFO    SenderThread:48486 [job_builder.py:build():264] is repo sourced job
+2023-07-24 10:28:16,402 INFO    SenderThread:48486 [job_builder.py:build():305] adding wandb-job metadata file
+2023-07-24 10:28:16,408 INFO    SenderThread:48486 [sender.py:transition_state():602] send defer: 9
+2023-07-24 10:28:16,408 DEBUG   HandlerThread:48486 [handler.py:handle_request():144] handle_request: defer
+2023-07-24 10:28:16,408 DEBUG   SenderThread:48486 [sender.py:send():369] send: artifact
+2023-07-24 10:28:16,408 INFO    HandlerThread:48486 [handler.py:handle_request_defer():170] handle defer: 9
+2023-07-24 10:28:17,205 INFO    Thread-12 :48486 [dir_watcher.py:_on_file_modified():289] file/dir modified: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log
+2023-07-24 10:28:17,305 WARNING StreamThr :48486 [internal.py:is_dead():414] Internal process exiting, parent pid 48065 disappeared
+2023-07-24 10:28:17,305 ERROR   StreamThr :48486 [internal.py:wandb_internal():152] Internal process shutdown.
+2023-07-24 10:28:17,414 INFO    HandlerThread:48486 [handler.py:finish():854] shutting down handler
+2023-07-24 10:28:17,415 INFO    WriterThread:48486 [datastore.py:close():298] close: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/run-coeifgqs.wandb
+2023-07-24 10:28:18,928 INFO    wandb-upload_0:48486 [upload_job.py:push():91] Uploaded file /Users/sanchaythalnerkar/Library/Application Support/wandb/artifacts/staging/tmp3yuwm1v2
+2023-07-24 10:28:18,932 INFO    wandb-upload_1:48486 [upload_job.py:push():91] Uploaded file /Users/sanchaythalnerkar/Library/Application Support/wandb/artifacts/staging/tmpfazob_a0
+2023-07-24 10:28:37,376 ERROR   Thread-11 (_thread_body):48486 [internal_api.py:upload_file():2287] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/zestt/Claude/coeifgqs/artifact/520662891/wandb_manifest.json?Expires=1690261099&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=UxbEBsW3Sn8%2F56hAhsSUvueMYJEcrY5VuC0GLPHHEbUk5b52feqOKpmGsi8ZRpP5hmLRcKt3M%2BcUrV%2FkUsczU1jrR50guULVGOBDHBoAOfC0uILEddAZmv%2BZruzLPxlFlx19Qtqa3b0DXy9HyIiEKK4oNp3t6b5gxTQoKf0%2B3n5pw2JAAcIse%2BdcppRnde%2BBn2%2FqGZybIhL%2FPtlnJnsKbnZUgZ3pttZgGT1l1PwC3duwou7L8ajewod9q4ZQ2tNYYsGj41DTXmPODe5NofSkLKU2dnlw4JNcyFG6waXm5ujCnS7%2FAduT6wgwakCHwHeaP7tzBa%2FGpxgXT0rFGjFuyg%3D%3D: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2023-07-24 10:28:37,378 ERROR   Thread-11 (_thread_body):48486 [internal_api.py:upload_file():2289] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'VnK2mLGba75R2re1WcWtIA==', 'Content-Length': '513'}
+2023-07-24 10:28:37,378 ERROR   Thread-11 (_thread_body):48486 [internal_api.py:upload_file():2291] upload_file response body: 
+2023-07-24 10:28:40,406 INFO    SenderThread:48486 [sender.py:send_artifact():1450] sent artifact job-https___github.com_Sanchay-T_VertexAI-Hackathon.git_agent_selfexecutingagent.ipynb - {'id': 'QXJ0aWZhY3Q6NTIwNjYyODkx', 'digest': 'b164621ca682c03312f0d7bf288604cb', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjg1MTU2NDk3', 'latestArtifact': None}, 'version': 'latest'}
+2023-07-24 10:28:40,407 INFO    SenderThread:48486 [sender.py:finish():1526] shutting down sender
+2023-07-24 10:28:40,407 INFO    SenderThread:48486 [dir_watcher.py:finish():359] shutting down directory watcher
+2023-07-24 10:28:41,304 INFO    SenderThread:48486 [dir_watcher.py:finish():389] scan: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files
+2023-07-24 10:28:41,304 INFO    SenderThread:48486 [dir_watcher.py:finish():403] scan save: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/requirements.txt requirements.txt
+2023-07-24 10:28:41,305 INFO    SenderThread:48486 [dir_watcher.py:finish():403] scan save: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log output.log
+2023-07-24 10:28:41,307 INFO    SenderThread:48486 [dir_watcher.py:finish():403] scan save: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/config.yaml config.yaml
+2023-07-24 10:28:41,310 INFO    SenderThread:48486 [dir_watcher.py:finish():403] scan save: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/wandb-summary.json wandb-summary.json
+2023-07-24 10:28:41,312 INFO    SenderThread:48486 [dir_watcher.py:finish():403] scan save: /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/wandb-metadata.json wandb-metadata.json
+2023-07-24 10:28:41,312 INFO    SenderThread:48486 [file_pusher.py:finish():159] shutting down file pusher
+2023-07-24 10:28:41,313 INFO    SenderThread:48486 [file_pusher.py:join():164] waiting for file pusher
+2023-07-24 10:28:41,986 INFO    wandb-upload_0:48486 [upload_job.py:push():133] Uploaded file /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/requirements.txt
+2023-07-24 10:28:42,095 INFO    wandb-upload_3:48486 [upload_job.py:push():133] Uploaded file /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/wandb-summary.json
+2023-07-24 10:28:42,122 INFO    wandb-upload_2:48486 [upload_job.py:push():133] Uploaded file /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/config.yaml
+2023-07-24 10:28:53,784 INFO    wandb-upload_1:48486 [upload_job.py:push():133] Uploaded file /Users/sanchaythalnerkar/Desktop/HRGPT/agent/wandb/run-20230724_102407-coeifgqs/files/output.log

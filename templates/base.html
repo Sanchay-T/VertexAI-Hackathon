@@ -66,6 +66,10 @@
             margin-bottom: 20px;
         }
 
+        #logo{
+            background-image: url("{% static 'account/images/preview.jpg' %}")
+        }
+
     </style>
 
 
@@ -84,13 +88,12 @@
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar">
             <div class="p-4 pt-5">
-                <a href="#" class="img logo rounded-circle mb-5"
-                    style="background-image: url({% static 'account/images/preview.jpg' %})"></a>
+                <a id="logo" href="#" class="img logo rounded-circle mb-5"></a>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
                         <a href="{% url 'dashboard' %}">Dashboard</a>
                     </li>
-                    {% if request.user.user_type == '1' %}
+                    {% if request.user.user_type == 1 %}
 
                     {% comment %} For HR {% endcomment %}
                     <li>

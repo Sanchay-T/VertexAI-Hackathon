@@ -1,0 +1,932 @@
+2023-07-24 10:24:05 [INFO] Question: Create a bar graph for the salaries in increasing order
+2023-07-24 10:24:05 [INFO] Running PandasAI with langchain_anthropic-chat LLM...
+2023-07-24 10:24:05 [INFO] Prompt ID: f80c07eb-1ed6-4cd6-bc01-517c31628f10
+2023-07-24 10:24:12 [INFO] HTTP Request: POST https://api.anthropic.com/v1/complete "HTTP/1.1 200 OK"
+2023-07-24 10:24:12 [INFO] 
+                        Code generated:
+                        ```
+                        import matplotlib.pyplot as plt
+
+df['Salary'].sort_values().plot(kind='bar')
+
+plt.xlabel('Employee')
+plt.ylabel('Salary')
+plt.title('Salaries in Increasing Order')
+
+plt.tight_layout()
+plt.show()
+                        ```
+                    
+2023-07-24 10:24:12 [INFO] 
+Code running:
+```
+df['Salary'].sort_values().plot(kind='bar')
+plt.xlabel('Employee')
+plt.ylabel('Salary')
+plt.title('Salaries in Increasing Order')
+plt.tight_layout()
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 10:24:13 [INFO] Answer: None
+2023-07-24 10:24:13 [INFO] Executed in: 8.407648086547852s
+2023-07-24 10:24:47 [INFO] Question: Create a bar graph for the salaries in increasing order , and the grapg should be properly formatted and look professional
+2023-07-24 10:24:47 [INFO] Running PandasAI with langchain_anthropic-chat LLM...
+2023-07-24 10:24:47 [INFO] Prompt ID: 268b8813-62e4-47b7-85c8-8c1e67d8987d
+2023-07-24 10:24:55 [INFO] HTTP Request: POST https://api.anthropic.com/v1/complete "HTTP/1.1 200 OK"
+2023-07-24 10:24:55 [INFO] 
+                        Code generated:
+                        ```
+                        import matplotlib.pyplot as plt
+
+# Sort salaries
+df = df.sort_values(by='Salary')
+
+# Create bar plot
+plt.bar(df['Employee_Name'], df['Salary'])
+
+# Add labels and title
+plt.xlabel('Employee Name') 
+plt.ylabel('Salary')
+plt.title('Salaries in Increasing Order')
+
+# Format y-axis as currency
+import matplotlib.ticker as mtick
+fmt = '${x:,.0f}'
+tick = mtick.StrMethodFormatter(fmt)
+plt.gca().yaxis.set_major_formatter(tick) 
+
+plt.tight_layout()
+plt.show()
+                        ```
+                    
+2023-07-24 10:24:55 [INFO] 
+Code running:
+```
+plt.bar(df['Employee_Name'], df['Salary'])
+plt.xlabel('Employee Name')
+plt.ylabel('Salary')
+plt.title('Salaries in Increasing Order')
+fmt = '${x:,.0f}'
+tick = mtick.StrMethodFormatter(fmt)
+plt.gca().yaxis.set_major_formatter(tick)
+plt.tight_layout()
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 10:24:56 [INFO] Answer: None
+2023-07-24 10:24:56 [INFO] Executed in: 9.20203709602356s
+2023-07-24 10:25:07 [INFO] Question: Create a bar graph for the salaries in increasing order , and the grapg should be properly formatted and look professional
+2023-07-24 10:25:07 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:25:07 [INFO] Prompt ID: 0e7ed6a1-7c01-4a35-8ec2-427e713f25d1
+2023-07-24 10:25:12 [INFO] 
+                        Code generated:
+                        ```
+                        import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming the dataframe is already loaded as 'df'
+
+# Sort the dataframe by salary in increasing order
+df_sorted = df.sort_values('Salary')
+
+# Create the bar graph
+plt.figure(figsize=(10, 6))
+plt.bar(df_sorted['Employee_Name'], df_sorted['Salary'])
+plt.xlabel('Employee Name')
+plt.ylabel('Salary')
+plt.title('Salaries in Increasing Order')
+plt.xticks(rotation=90)
+plt.tight_layout()
+
+# Show the graph
+plt.show()
+                        ```
+                    
+2023-07-24 10:25:12 [INFO] 
+Code running:
+```
+df_sorted = df.sort_values('Salary')
+plt.figure(figsize=(10, 6))
+plt.bar(df_sorted['Employee_Name'], df_sorted['Salary'])
+plt.xlabel('Employee Name')
+plt.ylabel('Salary')
+plt.title('Salaries in Increasing Order')
+plt.xticks(rotation=90)
+plt.tight_layout()
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 10:25:12 [INFO] Answer: None
+2023-07-24 10:25:12 [INFO] Executed in: 5.515038967132568s
+2023-07-24 10:25:42 [INFO] Question: Create a bar graph for the salaries in increasing order , and the grapg should be properly formatted and look professional
+2023-07-24 10:25:42 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:25:42 [INFO] Prompt ID: 0cf6c16a-7c68-43ad-9154-eb3bee5d56a1
+2023-07-24 10:25:42 [INFO] Using cached response
+2023-07-24 10:25:42 [INFO] 
+Code running:
+```
+df_sorted = df.sort_values('Salary')
+plt.figure(figsize=(10, 6))
+plt.bar(df_sorted['Employee_Name'], df_sorted['Salary'])
+plt.xlabel('Employee Name')
+plt.ylabel('Salary')
+plt.title('Salaries in Increasing Order')
+plt.xticks(rotation=90)
+plt.tight_layout()
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 10:25:43 [INFO] Answer: None
+2023-07-24 10:25:43 [INFO] Executed in: 0.9374971389770508s
+2023-07-24 10:26:38 [INFO] Question: Create a bar graph for the salaries in increasing order , and the grapg should be properly formatted and look professional
+2023-07-24 10:26:38 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:26:38 [INFO] Prompt ID: a8a4805d-e50b-4c5b-a051-a46435f43a60
+2023-07-24 10:26:38 [INFO] Using cached response
+2023-07-24 10:26:38 [INFO] 
+Code running:
+```
+df_sorted = df.sort_values('Salary')
+plt.figure(figsize=(10, 6))
+plt.bar(df_sorted['Employee_Name'], df_sorted['Salary'])
+plt.xlabel('Employee Name')
+plt.ylabel('Salary')
+plt.title('Salaries in Increasing Order')
+plt.xticks(rotation=90)
+plt.tight_layout()
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 10:26:39 [INFO] Answer: None
+2023-07-24 10:26:39 [INFO] Executed in: 0.9397621154785156s
+2023-07-24 10:28:08 [INFO] Question: Create a bar graph for the salaries in increasing order , and the grapg should be properly formatted and look professional
+2023-07-24 10:28:08 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:28:08 [INFO] Prompt ID: 5d0eb42c-6249-4be6-99b9-8eb62563ebdd
+2023-07-24 10:28:08 [INFO] Using cached response
+2023-07-24 10:28:08 [INFO] 
+Code running:
+```
+df_sorted = df.sort_values('Salary')
+plt.figure(figsize=(10, 6))
+plt.bar(df_sorted['Employee_Name'], df_sorted['Salary'])
+plt.xlabel('Employee Name')
+plt.ylabel('Salary')
+plt.title('Salaries in Increasing Order')
+plt.xticks(rotation=90)
+plt.tight_layout()
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 10:28:08 [INFO] Answer: None
+2023-07-24 10:28:08 [INFO] Executed in: 0.7014288902282715s
+2023-07-24 10:28:34 [INFO] Question: Create a bar graph for the salaries in increasing order , and the grapg should be properly formatted and look professional
+2023-07-24 10:28:34 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:28:34 [INFO] Prompt ID: c6f110ae-0202-46c1-9c5a-e10cc63f9521
+2023-07-24 10:28:34 [INFO] Using cached response
+2023-07-24 10:28:34 [INFO] 
+Code running:
+```
+df_sorted = df.sort_values('Salary')
+plt.figure(figsize=(10, 6))
+plt.bar(df_sorted['Employee_Name'], df_sorted['Salary'])
+plt.xlabel('Employee Name')
+plt.ylabel('Salary')
+plt.title('Salaries in Increasing Order')
+plt.xticks(rotation=90)
+plt.tight_layout()
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 10:28:34 [INFO] Answer: None
+2023-07-24 10:28:34 [INFO] Executed in: 0.6891908645629883s
+2023-07-24 10:28:48 [INFO] Question: Create a professional chart for the data
+2023-07-24 10:28:48 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:28:48 [INFO] Prompt ID: 30ef9ab4-0fa2-4e8b-aeb3-09ee2e254069
+2023-07-24 10:28:56 [INFO] 
+                        Code generated:
+                        ```
+                        import matplotlib.pyplot as plt
+
+# Assuming we want to create a bar chart for the average salary by department
+average_salary_by_department = df.groupby("Department")["Salary"].mean()
+
+plt.figure(figsize=(10, 5))
+plt.bar(average_salary_by_department.index, average_salary_by_department.values)
+plt.xlabel("Department")
+plt.ylabel("Average Salary")
+plt.title("Average Salary by Department")
+plt.show()
+                        ```
+                    
+2023-07-24 10:28:56 [INFO] 
+Code running:
+```
+average_salary_by_department = df.groupby('Department')['Salary'].mean()
+plt.figure(figsize=(10, 5))
+plt.bar(average_salary_by_department.index, average_salary_by_department.values)
+plt.xlabel('Department')
+plt.ylabel('Average Salary')
+plt.title('Average Salary by Department')
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 10:28:56 [INFO] Answer: None
+2023-07-24 10:28:56 [INFO] Executed in: 7.450987815856934s
+2023-07-24 10:31:19 [INFO] Question: Create a professional chart for the data, use plotly and create colorfull and professional
+2023-07-24 10:31:19 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:31:19 [INFO] Prompt ID: 7e80ad31-238f-4dba-be75-85ae1c63ac81
+2023-07-24 10:31:23 [INFO] 
+                        Code generated:
+                        ```
+                        import plotly.express as px
+
+fig = px.scatter_matrix(df, dimensions=["Salary", "EngagementSurvey", "EmpSatisfaction", "SpecialProjectsCount", "Absences"], color="Department")
+fig.update_layout(title="Professional Chart for Employee Data", width=1000, height=1000)
+fig.show()
+                        ```
+                    
+2023-07-24 10:31:23 [INFO] 
+Code running:
+```
+fig = px.scatter_matrix(df, dimensions=['Salary', 'EngagementSurvey', 'EmpSatisfaction', 'SpecialProjectsCount', 'Absences'], color='Department')
+fig.update_layout(title='Professional Chart for Employee Data', width=1000, height=1000)
+fig.show()
+```
+2023-07-24 10:32:14 [INFO] Question: Create a professional chart for the data, use plotly and create colorfull and professional
+2023-07-24 10:32:14 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:32:14 [INFO] Prompt ID: 16361567-1164-4ad4-8aef-67919a47afdf
+2023-07-24 10:32:14 [INFO] Using cached response
+2023-07-24 10:32:14 [INFO] 
+Code running:
+```
+fig = px.scatter_matrix(df, dimensions=['Salary', 'EngagementSurvey', 'EmpSatisfaction', 'SpecialProjectsCount', 'Absences'], color='Department')
+fig.update_layout(title='Professional Chart for Employee Data', width=1000, height=1000)
+fig.show()
+```
+2023-07-24 10:32:14 [INFO] Answer: None
+2023-07-24 10:32:14 [INFO] Executed in: 0.3262631893157959s
+2023-07-24 10:35:23 [INFO] Question: Create a professional chart for the data, use plotly and create colorfull and professional
+2023-07-24 10:35:23 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:35:23 [INFO] Prompt ID: 9cf59688-327d-4c05-82cf-611e32807e32
+2023-07-24 10:35:23 [INFO] Using cached response
+2023-07-24 10:35:23 [INFO] 
+Code running:
+```
+fig = px.scatter_matrix(df, dimensions=['Salary', 'EngagementSurvey', 'EmpSatisfaction', 'SpecialProjectsCount', 'Absences'], color='Department')
+fig.update_layout(title='Professional Chart for Employee Data', width=1000, height=1000)
+fig.show()
+```
+2023-07-24 10:35:23 [INFO] Answer: None
+2023-07-24 10:35:23 [INFO] Executed in: 0.15303707122802734s
+2023-07-24 10:35:49 [INFO] Question: Create a professional chart for the data, use plotly and create colorfull and professional
+2023-07-24 10:35:49 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:35:49 [INFO] Prompt ID: 892fdbaa-61c3-4023-9354-641742dc96e1
+2023-07-24 10:35:55 [INFO] 
+                        Code generated:
+                        ```
+                        import plotly.express as px
+
+fig = px.scatter_matrix(df, dimensions=["Salary", "EngagementSurvey", "EmpSatisfaction", "SpecialProjectsCount", "Absences"],
+                        color="Department", title="Professional Chart for Employee Data")
+fig.show()
+                        ```
+                    
+2023-07-24 10:35:55 [INFO] 
+Code running:
+```
+fig = px.scatter_matrix(df, dimensions=['Salary', 'EngagementSurvey', 'EmpSatisfaction', 'SpecialProjectsCount', 'Absences'], color='Department', title='Professional Chart for Employee Data')
+fig.show()
+```
+2023-07-24 10:35:56 [INFO] Answer: None
+2023-07-24 10:35:56 [INFO] Executed in: 6.909988880157471s
+2023-07-24 10:37:19 [INFO] Question: Create a professional chart for the data, use plotly and create colorfull and professional
+2023-07-24 10:37:19 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:37:19 [INFO] Prompt ID: f9f2ed30-3552-4476-96b4-9e1c853b4c80
+2023-07-24 10:37:19 [INFO] Using cached response
+2023-07-24 10:37:19 [INFO] 
+Code running:
+```
+fig = px.scatter_matrix(df, dimensions=['Salary', 'EngagementSurvey', 'EmpSatisfaction', 'SpecialProjectsCount', 'Absences'], color='Department', title='Professional Chart for Employee Data')
+fig.show()
+```
+2023-07-24 10:37:19 [INFO] Answer: None
+2023-07-24 10:37:19 [INFO] Executed in: 0.07312417030334473s
+2023-07-24 10:37:39 [INFO] Question: Create a professional chart for the total married people, use plotly and create colorfull and professional
+2023-07-24 10:37:39 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:37:39 [INFO] Prompt ID: d3414e51-fd22-4c55-a522-d8969239c632
+2023-07-24 10:37:45 [INFO] 
+                        Code generated:
+                        ```
+                        import plotly.express as px
+
+# Filter the dataframe to get only married people
+married_df = df[df['MaritalStatusID'] == 1]
+
+# Count the number of married people
+married_count = len(married_df)
+
+# Create a pie chart
+fig = px.pie(values=[married_count, len(df) - married_count], names=['Married', 'Not Married'], title='Married People in the Company')
+fig.update_traces(textinfo='percent+label', marker=dict(colors=['#1f77b4', '#ff7f0e'], line=dict(color='#FFFFFF', width=2)))
+fig.show()
+                        ```
+                    
+2023-07-24 10:37:45 [INFO] 
+Code running:
+```
+married_df = df[df['MaritalStatusID'] == 1]
+married_count = len(married_df)
+fig = px.pie(values=[married_count, len(df) - married_count], names=['Married', 'Not Married'], title='Married People in the Company')
+fig.update_traces(textinfo='percent+label', marker=dict(colors=['#1f77b4', '#ff7f0e'], line=dict(color='#FFFFFF', width=2)))
+fig.show()
+```
+2023-07-24 10:37:45 [INFO] Answer: None
+2023-07-24 10:37:45 [INFO] Executed in: 6.0205957889556885s
+2023-07-24 10:40:32 [INFO] Question: Create a professional chart for the data, use plotly and create colorfull and professional
+2023-07-24 10:40:32 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:40:32 [INFO] Prompt ID: d449897c-75db-434b-9d83-b4a746c30c7f
+2023-07-24 10:40:32 [INFO] Using cached response
+2023-07-24 10:40:32 [INFO] 
+Code running:
+```
+fig = px.scatter_matrix(df, dimensions=['Salary', 'EngagementSurvey', 'EmpSatisfaction', 'SpecialProjectsCount', 'Absences'], color='Department', title='Professional Chart for Employee Data')
+fig.show()
+```
+2023-07-24 10:40:32 [INFO] Answer: None
+2023-07-24 10:40:32 [INFO] Executed in: 0.03849315643310547s
+2023-07-24 10:42:50 [INFO] Question: Create a professional chart for the data, use plotly and create colorfull and professional
+2023-07-24 10:42:50 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:42:50 [INFO] Prompt ID: 53cd25b7-b873-4c1b-8dca-9253e459b51a
+2023-07-24 10:42:50 [INFO] Using cached response
+2023-07-24 10:42:50 [INFO] 
+Code running:
+```
+fig = px.scatter_matrix(df, dimensions=['Salary', 'EngagementSurvey', 'EmpSatisfaction', 'SpecialProjectsCount', 'Absences'], color='Department', title='Professional Chart for Employee Data')
+fig.show()
+```
+2023-07-24 10:42:51 [INFO] Answer: None
+2023-07-24 10:42:51 [INFO] Executed in: 0.10688304901123047s
+2023-07-24 10:44:31 [INFO] Question: Create a professional chart for the Gender Distruibution, use plotly and create colorfull and professional
+2023-07-24 10:44:31 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:44:31 [INFO] Prompt ID: 85b09491-3a7e-4bc2-b3c6-15817d0be6b1
+2023-07-24 10:44:36 [INFO] 
+                        Code generated:
+                        ```
+                        import plotly.express as px
+
+gender_count = df['Sex'].value_counts()
+fig = px.pie(gender_count, values=gender_count.values, names=gender_count.index, title='Gender Distribution')
+fig.update_traces(textposition='inside', textinfo='percent+label', marker=dict(colors=['#636EFA', '#EF553B']))
+fig.show()
+                        ```
+                    
+2023-07-24 10:44:36 [INFO] 
+Code running:
+```
+gender_count = df['Sex'].value_counts()
+fig = px.pie(gender_count, values=gender_count.values, names=gender_count.index, title='Gender Distribution')
+fig.update_traces(textposition='inside', textinfo='percent+label', marker=dict(colors=['#636EFA', '#EF553B']))
+fig.show()
+```
+2023-07-24 10:44:36 [INFO] Answer: None
+2023-07-24 10:44:36 [INFO] Executed in: 4.4665679931640625s
+2023-07-24 10:45:02 [INFO] Question: Create a professional chart for the Gender Distruibution, use plotly and create colorfull and professional
+2023-07-24 10:45:02 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:45:02 [INFO] Prompt ID: 551029e8-5e88-4166-b69e-9981a8d6bf67
+2023-07-24 10:45:02 [INFO] Using cached response
+2023-07-24 10:45:02 [INFO] 
+Code running:
+```
+gender_count = df['Sex'].value_counts()
+fig = px.pie(gender_count, values=gender_count.values, names=gender_count.index, title='Gender Distribution')
+fig.update_traces(textposition='inside', textinfo='percent+label', marker=dict(colors=['#636EFA', '#EF553B']))
+fig.show()
+```
+2023-07-24 10:45:02 [INFO] Answer: None
+2023-07-24 10:45:02 [INFO] Executed in: 0.04383993148803711s
+2023-07-24 10:45:23 [INFO] Question: Create a professional chart for the Gender Distruibution, use plotly and create colorfull and professional
+2023-07-24 10:45:23 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:45:23 [INFO] Prompt ID: eb5f9880-62b1-4313-a435-8e386910ec69
+2023-07-24 10:45:23 [INFO] Using cached response
+2023-07-24 10:45:23 [INFO] 
+Code running:
+```
+gender_count = df['Sex'].value_counts()
+fig = px.pie(gender_count, values=gender_count.values, names=gender_count.index, title='Gender Distribution')
+fig.update_traces(textposition='inside', textinfo='percent+label', marker=dict(colors=['#636EFA', '#EF553B']))
+fig.show()
+```
+2023-07-24 10:45:23 [INFO] Answer: None
+2023-07-24 10:45:23 [INFO] Executed in: 0.5312211513519287s
+2023-07-24 10:45:58 [INFO] Question: Create a professional chart for the Employee Distruibution, use plotly and create colorfull and professional
+2023-07-24 10:45:58 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:45:58 [INFO] Prompt ID: 297c46f6-4976-49b4-9dc9-cabdcf571a4c
+2023-07-24 10:46:05 [INFO] 
+                        Code generated:
+                        ```
+                        import plotly.express as px
+
+fig = px.histogram(df, x="Department", color="GenderID", title="Employee Distribution by Department and Gender", nbins=20)
+fig.update_layout(barmode='group', xaxis_title="Department", yaxis_title="Number of Employees")
+fig.show()
+                        ```
+                    
+2023-07-24 10:46:05 [INFO] 
+Code running:
+```
+fig = px.histogram(df, x='Department', color='GenderID', title='Employee Distribution by Department and Gender', nbins=20)
+fig.update_layout(barmode='group', xaxis_title='Department', yaxis_title='Number of Employees')
+fig.show()
+```
+2023-07-24 10:46:05 [INFO] Answer: None
+2023-07-24 10:46:05 [INFO] Executed in: 7.3714470863342285s
+2023-07-24 10:47:32 [INFO] Question: Create a professional chart for the Employee Distruibution, use plotly and create colorfull and professional and then save it
+2023-07-24 10:47:32 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:47:32 [INFO] Prompt ID: 3d96141a-e752-495b-abff-d00ae5e7bc20
+2023-07-24 10:47:35 [INFO] 
+                        Code generated:
+                        ```
+                        import plotly.express as px
+
+fig = px.histogram(df, x="Department", color="GenderID", title="Employee Distribution", nbins=20)
+fig.update_layout(barmode='group', xaxis_tickangle=-45)
+fig.write_image("employee_distribution_chart.png")
+                        ```
+                    
+2023-07-24 10:47:35 [INFO] 
+Code running:
+```
+fig = px.histogram(df, x='Department', color='GenderID', title='Employee Distribution', nbins=20)
+fig.update_layout(barmode='group', xaxis_tickangle=-45)
+fig.write_image('employee_distribution_chart.png')
+```
+2023-07-24 10:47:35 [WARNING] Error executing code (count: 0)
+2023-07-24 10:47:39 [WARNING] Error executing code (count: 1)
+2023-07-24 10:47:42 [WARNING] Error executing code (count: 2)
+2023-07-24 10:47:45 [INFO] Answer: 
+2023-07-24 10:47:45 [INFO] Executed in: 13.204746007919312s
+2023-07-24 10:48:04 [INFO] Question: Create a  chart with matplotlib for the Employee Distruibution, use plotly and create colorfull and professional and then save it
+2023-07-24 10:48:04 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:48:04 [INFO] Prompt ID: 5492e647-3a09-40d4-8cf0-d229a4d9e1b5
+2023-07-24 10:48:12 [INFO] 
+                        Code generated:
+                        ```
+                        import matplotlib.pyplot as plt
+import plotly.express as px
+
+# Employee Distribution by Department
+employee_distribution = df['Department'].value_counts()
+
+# Using matplotlib
+plt.figure(figsize=(10, 6))
+plt.bar(employee_distribution.index, employee_distribution.values)
+plt.xlabel('Department')
+plt.ylabel('Number of Employees')
+plt.title('Employee Distribution by Department')
+plt.savefig('employee_distribution_matplotlib.png')
+plt.show()
+
+# Using plotly
+fig = px.bar(employee_distribution, x=employee_distribution.index, y=employee_distribution.values, text=employee_distribution.values, labels={'x': 'Department', 'y': 'Number of Employees'}, title='Employee Distribution by Department')
+fig.update_traces(textposition='outside', textfont_size=14, marker=dict(color=employee_distribution.values, colorscale='Viridis', line=dict(color='black', width=1)))
+fig.write_image('employee_distribution_plotly.png')
+fig.show()
+                        ```
+                    
+2023-07-24 10:48:12 [INFO] 
+Code running:
+```
+employee_distribution = df['Department'].value_counts()
+plt.figure(figsize=(10, 6))
+plt.bar(employee_distribution.index, employee_distribution.values)
+plt.xlabel('Department')
+plt.ylabel('Number of Employees')
+plt.title('Employee Distribution by Department')
+plt.savefig('employee_distribution_matplotlib.png')
+plt.show(block=False)
+plt.close('all')
+fig = px.bar(employee_distribution, x=employee_distribution.index, y=employee_distribution.values, text=employee_distribution.values, labels={'x': 'Department', 'y': 'Number of Employees'}, title='Employee Distribution by Department')
+fig.update_traces(textposition='outside', textfont_size=14, marker=dict(color=employee_distribution.values, colorscale='Viridis', line=dict(color='black', width=1)))
+fig.write_image('employee_distribution_plotly.png')
+fig.show()
+```
+2023-07-24 10:48:12 [WARNING] Error executing code (count: 0)
+2023-07-24 10:48:20 [WARNING] Error executing code (count: 1)
+2023-07-24 10:48:28 [WARNING] Error executing code (count: 2)
+2023-07-24 10:48:36 [INFO] Answer: None
+2023-07-24 10:48:36 [INFO] Executed in: 32.16365313529968s
+2023-07-24 10:48:41 [INFO] Question: Create a  chart with matplotlib for the Employee Distruibution, use plotly and create colorfull and professional
+2023-07-24 10:48:41 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:48:41 [INFO] Prompt ID: 94f59e4a-1b92-4ce2-a578-86a541363760
+2023-07-24 10:48:47 [INFO] 
+                        Code generated:
+                        ```
+                        import matplotlib.pyplot as plt
+import plotly.express as px
+
+# Employee Distribution by Department
+employee_distribution = df['Department'].value_counts()
+
+# Using matplotlib
+plt.figure(figsize=(10, 6))
+plt.bar(employee_distribution.index, employee_distribution.values)
+plt.xlabel('Department')
+plt.ylabel('Number of Employees')
+plt.title('Employee Distribution by Department')
+plt.show()
+
+# Using plotly
+fig = px.bar(employee_distribution, x=employee_distribution.index, y=employee_distribution.values, text=employee_distribution.values, labels={'x': 'Department', 'y': 'Number of Employees'}, title='Employee Distribution by Department')
+fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(8,48,107)', marker_line_width=1.5, opacity=0.6)
+fig.show()
+                        ```
+                    
+2023-07-24 10:48:47 [INFO] 
+Code running:
+```
+employee_distribution = df['Department'].value_counts()
+plt.figure(figsize=(10, 6))
+plt.bar(employee_distribution.index, employee_distribution.values)
+plt.xlabel('Department')
+plt.ylabel('Number of Employees')
+plt.title('Employee Distribution by Department')
+plt.show(block=False)
+plt.close('all')
+fig = px.bar(employee_distribution, x=employee_distribution.index, y=employee_distribution.values, text=employee_distribution.values, labels={'x': 'Department', 'y': 'Number of Employees'}, title='Employee Distribution by Department')
+fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(8,48,107)', marker_line_width=1.5, opacity=0.6)
+fig.show()
+```
+2023-07-24 10:48:48 [INFO] Answer: None
+2023-07-24 10:48:48 [INFO] Executed in: 6.837362766265869s
+2023-07-24 10:50:16 [INFO] Question: Plot the histogram of jobs showing for each the gpd, using different colors for each bar
+2023-07-24 10:50:16 [INFO] Running PandasAI with openai LLM...
+2023-07-24 10:50:16 [INFO] Prompt ID: 68e3f2e4-f1c3-4951-a74b-1fa1ed7ceba8
+2023-07-24 10:50:20 [INFO] 
+                        Code generated:
+                        ```
+                        import matplotlib.pyplot as plt
+
+# Group the data by job and count the number of occurrences
+job_counts = df['Position'].value_counts()
+
+# Plot the histogram
+plt.figure(figsize=(12, 6))
+job_counts.plot(kind='bar', color=['red', 'blue', 'green', 'yellow', 'orange'])
+plt.xlabel('Job')
+plt.ylabel('Count')
+plt.title('Histogram of Jobs')
+plt.show()
+                        ```
+                    
+2023-07-24 10:50:20 [INFO] 
+Code running:
+```
+job_counts = df['Position'].value_counts()
+plt.figure(figsize=(12, 6))
+job_counts.plot(kind='bar', color=['red', 'blue', 'green', 'yellow', 'orange'])
+plt.xlabel('Job')
+plt.ylabel('Count')
+plt.title('Histogram of Jobs')
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 10:50:21 [INFO] Answer: None
+2023-07-24 10:50:21 [INFO] Executed in: 4.497750997543335s
+2023-07-24 10:51:31 [INFO] Question: Create a  chart with matplotlib for the  Single Employees  and create colorfull and professional
+2023-07-24 10:51:31 [INFO] Running PandasAI with openai LLM...
+2023-07-24 10:51:31 [INFO] Prompt ID: afb88af9-af20-4ed5-90fb-4c6176c59d07
+2023-07-24 10:52:48 [INFO] Question: Create a  chart with matplotlib for the  Single Employees
+2023-07-24 10:52:48 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 10:52:48 [INFO] Prompt ID: 8880c223-e645-4de3-b0b3-94a79d5153d5
+2023-07-24 10:52:56 [INFO] 
+                        Code generated:
+                        ```
+                        import matplotlib.pyplot as plt
+
+single_employees = df[df['MaritalDesc'] == 'Single']
+single_employees_count = single_employees['Position'].value_counts()
+
+plt.figure(figsize=(10, 5))
+plt.bar(single_employees_count.index, single_employees_count.values)
+plt.xlabel('Position')
+plt.ylabel('Number of Single Employees')
+plt.title('Single Employees by Position')
+plt.xticks(rotation=45)
+plt.show()
+                        ```
+                    
+2023-07-24 10:52:56 [INFO] 
+Code running:
+```
+single_employees = df[df['MaritalDesc'] == 'Single']
+single_employees_count = single_employees['Position'].value_counts()
+plt.figure(figsize=(10, 5))
+plt.bar(single_employees_count.index, single_employees_count.values)
+plt.xlabel('Position')
+plt.ylabel('Number of Single Employees')
+plt.title('Single Employees by Position')
+plt.xticks(rotation=45)
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 10:52:56 [INFO] Answer: None
+2023-07-24 10:52:56 [INFO] Executed in: 8.057448863983154s
+2023-07-24 10:55:39 [INFO] Question: Create a  chart with matplotlib for the  Single Employees, using different colors for each bar
+2023-07-24 10:55:39 [INFO] Running PandasAI with openai LLM...
+2023-07-24 10:55:39 [INFO] Prompt ID: 28f78540-cbab-494e-8165-6c52ff8ed696
+2023-07-24 10:55:43 [INFO] 
+                        Code generated:
+                        ```
+                        import matplotlib.pyplot as plt
+
+# Filter the dataframe for single employees
+single_employees = df[df['MaritalDesc'] == 'Single']
+
+# Count the number of single employees in each department
+department_counts = single_employees['Department'].value_counts()
+
+# Create a bar chart
+plt.bar(department_counts.index, department_counts.values)
+
+# Add labels and title
+plt.xlabel('Department')
+plt.ylabel('Number of Single Employees')
+plt.title('Number of Single Employees in Each Department')
+
+# Show the chart
+plt.show()
+                        ```
+                    
+2023-07-24 10:55:43 [INFO] 
+Code running:
+```
+single_employees = df[df['MaritalDesc'] == 'Single']
+department_counts = single_employees['Department'].value_counts()
+plt.bar(department_counts.index, department_counts.values)
+plt.xlabel('Department')
+plt.ylabel('Number of Single Employees')
+plt.title('Number of Single Employees in Each Department')
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 10:55:43 [INFO] Answer: None
+2023-07-24 10:55:43 [INFO] Executed in: 4.541162967681885s
+2023-07-24 10:57:10 [INFO] Question: Create a  chart with matplotlib for the  Single Employees and save it
+2023-07-24 10:57:10 [INFO] Running PandasAI with openai LLM...
+2023-07-24 10:57:10 [INFO] Prompt ID: 2aef5715-90b4-4b87-a84c-ce5b126fe07d
+2023-07-24 10:57:14 [INFO] 
+                        Code generated:
+                        ```
+                        import matplotlib.pyplot as plt
+
+# Filter the dataframe for single employees
+single_employees = df[df['MaritalDesc'] == 'Single']
+
+# Create a bar chart of the single employees
+plt.bar(single_employees['Employee_Name'], single_employees['Salary'])
+plt.xlabel('Employee Name')
+plt.ylabel('Salary')
+plt.title('Salary of Single Employees')
+plt.xticks(rotation=90)
+
+# Save the chart as a PNG file
+plt.savefig('single_employees_salary.png')
+
+# Show the chart
+plt.show()
+                        ```
+                    
+2023-07-24 10:57:14 [INFO] 
+Code running:
+```
+single_employees = df[df['MaritalDesc'] == 'Single']
+plt.bar(single_employees['Employee_Name'], single_employees['Salary'])
+plt.xlabel('Employee Name')
+plt.ylabel('Salary')
+plt.title('Salary of Single Employees')
+plt.xticks(rotation=90)
+plt.savefig('single_employees_salary.png')
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 10:57:14 [INFO] Answer: None
+2023-07-24 10:57:14 [INFO] Executed in: 4.829413175582886s
+2023-07-24 10:58:15 [INFO] Question: Create a pie chart for the  Single Employees and save it
+2023-07-24 10:58:15 [INFO] Running PandasAI with openai LLM...
+2023-07-24 10:58:15 [INFO] Prompt ID: a1f5c771-d423-4cdc-99ee-0fccfc6a6675
+2023-07-24 10:58:19 [INFO] 
+                        Code generated:
+                        ```
+                        import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the dataframe
+df = pd.read_csv('data.csv')
+
+# Filter the dataframe for single employees
+single_employees = df[df['MaritalDesc'] == 'Single']
+
+# Count the number of single employees
+single_count = len(single_employees)
+
+# Create a pie chart
+plt.pie([single_count, len(df) - single_count], labels=['Single', 'Other'], autopct='%1.1f%%')
+plt.title('Single Employees')
+
+# Save the pie chart
+plt.savefig('single_employees_pie_chart.png')
+
+# Show the pie chart
+plt.show()
+                        ```
+                    
+2023-07-24 10:58:19 [INFO] 
+Code running:
+```
+single_employees = df[df['MaritalDesc'] == 'Single']
+single_count = len(single_employees)
+plt.pie([single_count, len(df) - single_count], labels=['Single', 'Other'], autopct='%1.1f%%')
+plt.title('Single Employees')
+plt.savefig('single_employees_pie_chart.png')
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 10:58:19 [INFO] Answer: None
+2023-07-24 10:58:19 [INFO] Executed in: 4.218629837036133s
+2023-07-24 11:07:12 [INFO] Question: Create a suitable chart for Positions and save it
+2023-07-24 11:07:12 [INFO] Running PandasAI with openai LLM...
+2023-07-24 11:07:12 [INFO] Prompt ID: 1646bf10-7b5e-4da1-adab-de496bfa0f85
+2023-07-24 11:07:16 [INFO] 
+                        Code generated:
+                        ```
+                        import matplotlib.pyplot as plt
+
+# Group the data by Position and count the number of occurrences
+position_counts = df['Position'].value_counts()
+
+# Create a bar chart
+plt.figure(figsize=(12, 6))
+position_counts.plot(kind='bar')
+plt.title('Positions')
+plt.xlabel('Position')
+plt.ylabel('Count')
+
+# Save the chart as an image file
+plt.savefig('positions_chart.png')
+
+# Show the chart
+plt.show()
+                        ```
+                    
+2023-07-24 11:07:16 [INFO] 
+Code running:
+```
+position_counts = df['Position'].value_counts()
+plt.figure(figsize=(12, 6))
+position_counts.plot(kind='bar')
+plt.title('Positions')
+plt.xlabel('Position')
+plt.ylabel('Count')
+plt.savefig('positions_chart.png')
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 11:07:17 [INFO] Answer: None
+2023-07-24 11:07:17 [INFO] Executed in: 4.510552883148193s
+2023-07-24 11:35:52 [INFO] Question: Create a suitable chart for Positions and save it
+2023-07-24 11:35:52 [INFO] Running PandasAI with langchain_anthropic-chat LLM...
+2023-07-24 11:35:52 [INFO] Prompt ID: d5713f3a-ce0d-4c1c-8c09-b7bab1082544
+2023-07-24 11:35:53 [ERROR] Failed to detect the name of this notebook, you can set it manually with the WANDB_NOTEBOOK_NAME environment variable to enable code saving.
+2023-07-24 11:36:01 [INFO] HTTP Request: POST https://api.anthropic.com/v1/complete "HTTP/1.1 200 OK"
+2023-07-24 11:36:01 [INFO] 
+                        Code generated:
+                        ```
+                        import matplotlib.pyplot as plt
+
+# Get the count of positions
+position_counts = df['Position'].value_counts()
+
+# Create a pie chart 
+plt.pie(position_counts, labels=position_counts.index, autopct='%1.1f%%')
+plt.title('Positions')
+plt.savefig('positions.png')
+                        ```
+                    
+2023-07-24 11:36:01 [INFO] 
+Code running:
+```
+position_counts = df['Position'].value_counts()
+plt.pie(position_counts, labels=position_counts.index, autopct='%1.1f%%')
+plt.title('Positions')
+plt.savefig('positions.png')
+```
+2023-07-24 11:36:01 [INFO] Answer: None
+2023-07-24 11:36:01 [INFO] Executed in: 8.758844137191772s
+2023-07-24 11:36:23 [INFO] Question: Create a suitable chart for Positions and save it
+2023-07-24 11:36:23 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 11:36:23 [INFO] Prompt ID: 3922a8f4-0c19-4d9d-beef-1d3681863c10
+2023-07-24 11:36:28 [INFO] 
+                        Code generated:
+                        ```
+                        import matplotlib.pyplot as plt
+
+# Group the dataframe by 'Position' and count the number of employees in each position
+position_counts = df['Position'].value_counts()
+
+# Create a bar chart for Positions
+plt.figure(figsize=(10, 6))
+position_counts.plot(kind='bar')
+plt.xlabel('Positions')
+plt.ylabel('Number of Employees')
+plt.title('Number of Employees in Each Position')
+
+# Save the chart as a PNG file
+plt.savefig('positions_chart.png')
+plt.show()
+                        ```
+                    
+2023-07-24 11:36:28 [INFO] 
+Code running:
+```
+position_counts = df['Position'].value_counts()
+plt.figure(figsize=(10, 6))
+position_counts.plot(kind='bar')
+plt.xlabel('Positions')
+plt.ylabel('Number of Employees')
+plt.title('Number of Employees in Each Position')
+plt.savefig('positions_chart.png')
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 11:36:29 [INFO] Answer: None
+2023-07-24 11:36:29 [INFO] Executed in: 5.961304187774658s
+2023-07-24 11:36:51 [INFO] Question: Create a suitable chart for Performance score and save it
+2023-07-24 11:36:51 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 11:36:51 [INFO] Prompt ID: 96901ad2-fffa-44f8-a538-5b54deca45fd
+2023-07-24 11:36:56 [INFO] 
+                        Code generated:
+                        ```
+                        import matplotlib.pyplot as plt
+
+# Create a bar chart for PerformanceScore
+performance_counts = df['PerformanceScore'].value_counts()
+performance_counts.plot(kind='bar')
+
+# Set chart title and labels
+plt.title('Performance Score Distribution')
+plt.xlabel('Performance Score')
+plt.ylabel('Number of Employees')
+
+# Save the chart as an image
+plt.savefig('performance_score_chart.png')
+plt.show()
+                        ```
+                    
+2023-07-24 11:36:56 [INFO] 
+Code running:
+```
+performance_counts = df['PerformanceScore'].value_counts()
+performance_counts.plot(kind='bar')
+plt.title('Performance Score Distribution')
+plt.xlabel('Performance Score')
+plt.ylabel('Number of Employees')
+plt.savefig('performance_score_chart.png')
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 11:36:56 [INFO] Answer: None
+2023-07-24 11:36:56 [INFO] Executed in: 4.828614950180054s
+2023-07-24 11:37:28 [INFO] Question: Create a proper , professional and suitable chart for Performance score and save it
+2023-07-24 11:37:28 [INFO] Running PandasAI with langchain_openai-chat LLM...
+2023-07-24 11:37:28 [INFO] Prompt ID: 88a403b0-3033-4953-9386-8e4287bfe78a
+2023-07-24 11:37:33 [INFO] 
+                        Code generated:
+                        ```
+                        import matplotlib.pyplot as plt
+
+# Create a bar chart for PerformanceScore
+performance_counts = df['PerformanceScore'].value_counts()
+plt.figure(figsize=(10, 6))
+plt.bar(performance_counts.index, performance_counts.values)
+plt.xlabel('Performance Score')
+plt.ylabel('Number of Employees')
+plt.title('Employee Performance Score Distribution')
+plt.savefig('performance_score_chart.png')
+plt.show()
+                        ```
+                    
+2023-07-24 11:37:33 [INFO] 
+Code running:
+```
+performance_counts = df['PerformanceScore'].value_counts()
+plt.figure(figsize=(10, 6))
+plt.bar(performance_counts.index, performance_counts.values)
+plt.xlabel('Performance Score')
+plt.ylabel('Number of Employees')
+plt.title('Employee Performance Score Distribution')
+plt.savefig('performance_score_chart.png')
+plt.show(block=False)
+plt.close('all')
+```
+2023-07-24 11:37:34 [INFO] Answer: None
+2023-07-24 11:37:34 [INFO] Executed in: 5.361721992492676s

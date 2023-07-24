@@ -19,7 +19,7 @@ def base_dashboard(request):
     if request.user.is_superuser:
         return render(request , "account/admin/admin_dashboard.html")
     
-    if request.user.user_type == "1":
+    if request.user.user_type == 1:
         return render(request , "account/hr/hr_dashboard.html")
     else:
         return render(request , "account/employee/emp_dashboard.html")
@@ -86,21 +86,33 @@ def login_user(request):
 @login_required(login_url='login')
 def post_job(request):
     if request.method == "POST":
+        print(request.POST)
         job_title = request.POST.get("job_title")
         job_description = request.POST.get("job_description")
         job_location = request.POST.get("job_location")
-        job_salary = request.POST.get("job_salary")
         job_experience = request.POST.get("job_experience")
         job_qualification = request.POST.get("job_qualification")
+        job_company = request.POST.get("job_company")
+        job_salary_range = request.POST.get("job_salary")
+        job_company_info = request.POST.get("job_company_info")
+        job_security = request.POST.get("job_security")
+        flexible_work_arrangements = request.POST.get("flexible_work_arrangements")
+        flexible_work_arrangements = True if flexible_work_arrangements else False
+        print("********")
+        print(flexible_work_arrangements)
+        print("********")
         job_posted_by = request.user
         # job_status = request.POST.get("job_status")
         job_type = request.POST.get("job_type")
 
-        job_post = JobPost.objects.create(job_title=job_title , job_description=job_description , job_location=job_location , job_salary=job_salary , job_experience=job_experience , job_qualification=job_qualification , job_posted_by=job_posted_by , job_type=job_type)
-        job_post.save()
-        return redirect("hr_job_list")
-    return render(request , "account/hr/new_job_post.html")
+        company = Company.objects.get(id = job_company)
 
+        job_post = JobPost.objects.create(job_title=job_title , job_description=job_description , job_location=job_location , job_salary_range=job_salary_range , job_experience=job_experience , job_qualification=job_qualification , flexible_work_arrangements = flexible_work_arrangements , company_information = job_company_info , job_posted_by=job_posted_by , job_type=job_type , job_security_information = job_security , company_id=company)
+        job_post.save()
+        return redirect("jobs_posted")
+    return render(request , "account/hr/new_job_post.html" , context={'company_list' : Company.objects.all()})
+
+import json
 
 @login_required(login_url='login')
 def job_list_hr(request):
@@ -114,12 +126,39 @@ def job_list_hr(request):
 def job_details(request , job_id):
     job = JobPost.objects.get(id=job_id)
 
-    output = 'vertex_ai_process.process()'
-    print(type(output))
+    job_applicants = JobApplication.objects.filter(job = job).select_related('job' , 'applicant').all()
+    print(job_applicants)
+
+    mydict = {
+        'Name' : [],
+        'Email' : [],
+        "Skills" : [],
+        "Experience" : [],
+        "Applicant Status" : []
+    }
+
+    for job_applicant in job_applicants:
+        mydict['Name'].append(job_applicant.applicant.username)
+        mydict['Email'].append(job_applicant.applicant.email)
+        mydict['Skills'].append(job_applicant.employee_info.skills)
+        mydict['Experience'].append(job_applicant.employee_info.experience)
+        mydict['Experience'].append(job_applicant.employee_info.experience)
+
+
+    # convert mydict to jsonstring 
+    json_string = json.dumps(mydict)
+    print(json_string)
+
+    
+    jobpost_data , create = JobInsightData.objects.get_or_create(job=job)
+    jobpost_data.job_application_data = json_string
+
 
     context = {
-        'job_insight' : output
+        'job_applicants' : job_applicants,
+        'job_id' : job.id,
     }
+
 
     return render(request , "account/job_details.html" , context=context)
 
@@ -138,14 +177,17 @@ def apply_for_job(request , job_id):
     resume = request.FILES['resume']
     # if JobApplication.objects.filter(job=job , applicant=request.user).exists():
         # return HttpResponse("Job Already Applied.")
-    job_application = JobApplication.objects.create(job=job , applicant=request.user , resume = resume )
+    employee = Employee_Info.objects.create(candidate_info = "Testing Info" , experience = "5 years" , skills = "Django")
+    employee.save()
+    job_application = JobApplication.objects.create(job=job , applicant=request.user , resume = resume , employee_info = employee)
     job_application.save()
+    
 
     filename = os.path.basename(job_application.resume.name)
 
     print(filename)
 
-    threading.Thread(target=vertex_ai_process.extract_name_table , args=[filename]).start()
+    # threading.Thread(target=vertex_ai_process.extract_name_table , args=[filename]).start()
 
     
     return HttpResponse("Applied Successfully.")
@@ -158,4 +200,13 @@ def jobs_applied(request):
         "job_list" : job_list
     }
     return render(request , "account/employee/jobs_applied.html" , context = context)
+
+
+def analyze_hr_query(request):
+    print(request.POST)
+
+    job_id = request.POST.get("job_id")
+    print(JobInsightData.objects.filter(job_id=job_id).first().job_application_data)
+    return HttpResponse("Success")
+
 

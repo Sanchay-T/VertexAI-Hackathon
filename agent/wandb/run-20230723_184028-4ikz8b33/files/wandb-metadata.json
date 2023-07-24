@@ -1,0 +1,33 @@
+{
+    "os": "macOS-13.4.1-arm64-arm-64bit",
+    "python": "3.11.2",
+    "heartbeatAt": "2023-07-23T13:10:29.001998",
+    "startedAt": "2023-07-23T13:10:28.127160",
+    "docker": null,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/Sanchay-T/VertexAI-Hackathon.git",
+        "commit": "f1d9c79b63174a5c7fec3af2483c7ffb36b9d146"
+    },
+    "email": "thalnerkarsanchay17@gmail.com",
+    "root": "/Users/sanchaythalnerkar/Desktop/HRGPT",
+    "host": "192.168.1.3",
+    "username": "sanchaythalnerkar",
+    "executable": "/Users/sanchaythalnerkar/Desktop/HRGPT/env/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "disk": {
+        "total": 228.27386474609375,
+        "used": 8.442028045654297
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 8.0
+    }
+}

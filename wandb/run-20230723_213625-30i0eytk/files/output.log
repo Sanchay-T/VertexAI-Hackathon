@@ -1,0 +1,37 @@
+[34m[1mwandb[39m[22m: Streaming LangChain activity to W&B at https://wandb.ai/zestt/Claude/runs/30i0eytk
+[34m[1mwandb[39m[22m: `WandbTracer` is currently in beta.
+[34m[1mwandb[39m[22m: Please report any issues to https://github.com/wandb/wandb/issues with the tag `langchain`.
+ Here is the JSON response conforming to the provided schema:
+```json
+{
+  "basic_info": {
+    "name": "Poojan Vig",
+    "url": "https://github.com/poojanvig",
+    "description": null,
+    "location": null,
+    "company": null,
+    "followers": 4,
+    "following": 6
+  },
+  "activity": {
+    "contributions_last_year": 14,
+    "contributions_by_day": {
+      "busiest_day": "Saturday",
+      "typical_days": "Wednesday",
+      "no_contributions": "Sunday, Monday, Tuesday, Thursday, Friday"
+    },
+    "repositories_created": {
+      "total": 6,
+      "last_3_months": 0,
+      "popular_languages": ["HTML", "Java", "Python"]
+    },
+    "pull_requests": {
+      "opened_last_3_months": 0
+    },
+    "stars": {
+      "total": 0
+    }
+  }
+}
+```
+basic_info=BasicInfo(name='Poojan Vig', url='https://github.com/poojanvig', description=None, location=None, company=None, followers=4, following=6) activity=Activity(contributions_last_year=14, contributions_by_day=ContributionsByDay(busiest_day='Saturday', typical_days='Wednesday', no_contributions='Sunday, Monday, Tuesday, Thursday, Friday'), repositories_created=RepositoriesCreated(total=6, last_3_months=0, popular_languages=['HTML', 'Java', 'Python']), pull_requests=PullRequests(opened_last_3_months=0), stars=Stars(total=0))

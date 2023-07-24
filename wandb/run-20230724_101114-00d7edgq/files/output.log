@@ -1,0 +1,74 @@
+[34m[1mwandb[39m[22m: Streaming LangChain activity to W&B at https://wandb.ai/zestt/Claude/runs/00d7edgq
+[34m[1mwandb[39m[22m: `WandbTracer` is currently in beta.
+[34m[1mwandb[39m[22m: Please report any issues to https://github.com/wandb/wandb/issues with the tag `langchain`.
+[1m> Entering new AgentExecutor chain...
+<xml><var name="_dummy_ipython_val"  />
+<var name="_dummy_special_var"  />
+<var name="AgentType" type="EnumType" qualifier="enum" value="%3Cenum %27AgentType%27&gt;" isContainer="True" shape="9" />
+<var name="BaseModel" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27pydantic.main.BaseModel%27&gt;" isContainer="True" />
+<var name="ChatOpenAI" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.chat_models.openai.ChatOpenAI%27&gt;" isContainer="True" />
+<var name="LLMMathChain" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.chains.llm_math.base.LLMMathChain%27&gt;" isContainer="True" />
+<var name="OpenAI" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.llms.openai.OpenAI%27&gt;" isContainer="True" />
+<var name="PlanAndExecute" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.experimental.plan_and_execute.agent_executor.PlanAndExecute%27&gt;" isContainer="True" />
+<var name="PromptTemplate" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.prompts.prompt.PromptTemplate%27&gt;" isContainer="True" />
+<var name="PythonREPL" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.utilities.python.PythonREPL%27&gt;" isContainer="True" />
+<var name="PythonREPLTool" type="ToolMetaclass" qualifier="langchain.tools.base" value="%3Cclass %27langchain.tools.python.tool.PythonREPLTool%27&gt;" isContainer="True" />
+<var name="TWILIO_ACCOUNT_SID" type="NoneType" qualifier="builtins" value="None" />
+<var name="TWILIO_AUTH_TOKEN" type="NoneType" qualifier="builtins" value="None" />
+<var name="TWILIO_FROM_NUMBER" type="NoneType" qualifier="builtins" value="None" />
+<var name="Tool" type="ToolMetaclass" qualifier="langchain.tools.base" value="%3Cclass %27langchain.tools.base.Tool%27&gt;" isContainer="True" />
+<var name="agent" type="AgentExecutor" qualifier="langchain.agents.agent" value="AgentExecutor%28memory=None%2C callbacks=None%2C callback_manager=None%2C verbose=True%2C tags=None%2C metadata=None%2C agent=OpenAIFunction...iterations=15%2C max_execution_time=None%2C early_stopping_method=%27force%27%2C handle_parsing_errors=False%2C trim_intermediate_steps=-1%29" isContainer="True" />
+<var name="anthropic_api_key" type="str" qualifier="builtins" value="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" />
+<var name="api_key" type="str" qualifier="builtins" value="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" />
+<var name="df" type="DataFrame" qualifier="pandas.core.frame" value="%5B%27Employee_Name%27%2C %27EmpID%27%2C %27MarriedID%27%2C %27MaritalStatusID%27%2C %27GenderID%27%2C %27EmpStatusID%27%2C %27DeptID%27%2C %27PerfScoreID%27%2C %27FromDiversityJobFairID%27%2C %27Salary%27%2C %27Termd%27%2C %27PositionID%27%2C %27Position%27%2C %27State%27%2C %27Zip%27%2C %27DOB%27%2C %27Sex%27%2C %27MaritalDesc%27%2C %27CitizenDesc%27%2C %27HispanicLatino%27%2C %27RaceDesc%27%2C %27DateofHire%27%2C %27DateofTermination%27%2C %27TermReason%27%2C %27EmploymentStatus%27%2C %27Department%27%2C %27ManagerName%27%2C %27ManagerID%27%2C %27RecruitmentSource%27%2C %27PerformanceScore%27%2C %27EngagementSurvey%27%2C %27EmpSatisfaction%27%2C %27SpecialProjectsCount%27%2C %27LastPerformanceReview_Date%27%2C %27DaysLateLast30%27%2C %27Absences%27%5D %5B0         Adinolfi%2C Wilson  K  10026          0                0         1   %5D %5B1    Ait Sidi%2C Karthikeyan     10084          1                1         1   %5D %5B2           Akinkuolie%2C Sarah  10196          1                1         0   %5D %5B3                Alagbe%2CTrina  10088          1                1         0   %5D %5B4            Anderson%2C Carol   10069          0                2         0   %5D %5B..                        ...    ...        ...     ..." isContainer="True" shape="(311, 36)" />
+<var name="serper_api_key" type="str" qualifier="builtins" value="bd4187d5f23e6a405a6470fe4fe03e61742cccf4" />
+</xml>
+[1m> Entering new AgentExecutor chain...
+[32m[1mInvoking: `python_repl_ast` with `df.shape[0]`
+[36m[1m311[32mThe number of jobs in the dataframe is 311.
+[1m> Finished chain.
+<xml><var name="_dummy_ipython_val"  />
+<var name="_dummy_special_var"  />
+<var name="AgentType" type="EnumType" qualifier="enum" value="%3Cenum %27AgentType%27&gt;" isContainer="True" shape="9" />
+<var name="BaseModel" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27pydantic.main.BaseModel%27&gt;" isContainer="True" />
+<var name="ChatOpenAI" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.chat_models.openai.ChatOpenAI%27&gt;" isContainer="True" />
+<var name="LLMMathChain" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.chains.llm_math.base.LLMMathChain%27&gt;" isContainer="True" />
+<var name="OpenAI" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.llms.openai.OpenAI%27&gt;" isContainer="True" />
+<var name="PlanAndExecute" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.experimental.plan_and_execute.agent_executor.PlanAndExecute%27&gt;" isContainer="True" />
+<var name="PromptTemplate" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.prompts.prompt.PromptTemplate%27&gt;" isContainer="True" />
+<var name="PythonREPL" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.utilities.python.PythonREPL%27&gt;" isContainer="True" />
+<var name="PythonREPLTool" type="ToolMetaclass" qualifier="langchain.tools.base" value="%3Cclass %27langchain.tools.python.tool.PythonREPLTool%27&gt;" isContainer="True" />
+<var name="TWILIO_ACCOUNT_SID" type="NoneType" qualifier="builtins" value="None" />
+<var name="TWILIO_AUTH_TOKEN" type="NoneType" qualifier="builtins" value="None" />
+<var name="TWILIO_FROM_NUMBER" type="NoneType" qualifier="builtins" value="None" />
+<var name="Tool" type="ToolMetaclass" qualifier="langchain.tools.base" value="%3Cclass %27langchain.tools.base.Tool%27&gt;" isContainer="True" />
+<var name="agent" type="AgentExecutor" qualifier="langchain.agents.agent" value="AgentExecutor%28memory=None%2C callbacks=None%2C callback_manager=None%2C verbose=True%2C tags=None%2C metadata=None%2C agent=OpenAIFunction...iterations=15%2C max_execution_time=None%2C early_stopping_method=%27force%27%2C handle_parsing_errors=False%2C trim_intermediate_steps=-1%29" isContainer="True" />
+<var name="anthropic_api_key" type="str" qualifier="builtins" value="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" />
+<var name="api_key" type="str" qualifier="builtins" value="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" />
+<var name="code" type="str" qualifier="builtins" value="The number of jobs in the dataframe is 311." />
+<var name="df" type="DataFrame" qualifier="pandas.core.frame" value="%5B%27Employee_Name%27%2C %27EmpID%27%2C %27MarriedID%27%2C %27MaritalStatusID%27%2C %27GenderID%27%2C %27EmpStatusID%27%2C %27DeptID%27%2C %27PerfScoreID%27%2C %27FromDiversityJobFairID%27%2C %27Salary%27%2C %27Termd%27%2C %27PositionID%27%2C %27Position%27%2C %27State%27%2C %27Zip%27%2C %27DOB%27%2C %27Sex%27%2C %27MaritalDesc%27%2C %27CitizenDesc%27%2C %27HispanicLatino%27%2C %27RaceDesc%27%2C %27DateofHire%27%2C %27DateofTermination%27%2C %27TermReason%27%2C %27EmploymentStatus%27%2C %27Department%27%2C %27ManagerName%27%2C %27ManagerID%27%2C %27RecruitmentSource%27%2C %27PerformanceScore%27%2C %27EngagementSurvey%27%2C %27EmpSatisfaction%27%2C %27SpecialProjectsCount%27%2C %27LastPerformanceReview_Date%27%2C %27DaysLateLast30%27%2C %27Absences%27%5D %5B0         Adinolfi%2C Wilson  K  10026          0                0         1   %5D %5B1    Ait Sidi%2C Karthikeyan     10084          1                1         1   %5D %5B2           Akinkuolie%2C Sarah  10196          1                1         0   %5D %5B3                Alagbe%2CTrina  10088          1                1         0   %5D %5B4            Anderson%2C Carol   10069          0                2         0   %5D %5B..                        ...    ...        ...     ..." isContainer="True" shape="(311, 36)" />
+<var name="serper_api_key" type="str" qualifier="builtins" value="bd4187d5f23e6a405a6470fe4fe03e61742cccf4" />
+</xml>
+<xml><var name="_dummy_ipython_val"  />
+<var name="_dummy_special_var"  />
+<var name="AgentType" type="EnumType" qualifier="enum" value="%3Cenum %27AgentType%27&gt;" isContainer="True" shape="9" />
+<var name="BaseModel" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27pydantic.main.BaseModel%27&gt;" isContainer="True" />
+<var name="ChatOpenAI" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.chat_models.openai.ChatOpenAI%27&gt;" isContainer="True" />
+<var name="LLMMathChain" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.chains.llm_math.base.LLMMathChain%27&gt;" isContainer="True" />
+<var name="OpenAI" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.llms.openai.OpenAI%27&gt;" isContainer="True" />
+<var name="PlanAndExecute" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.experimental.plan_and_execute.agent_executor.PlanAndExecute%27&gt;" isContainer="True" />
+<var name="PromptTemplate" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.prompts.prompt.PromptTemplate%27&gt;" isContainer="True" />
+<var name="PythonREPL" type="ModelMetaclass" qualifier="pydantic.main" value="%3Cclass %27langchain.utilities.python.PythonREPL%27&gt;" isContainer="True" />
+<var name="PythonREPLTool" type="ToolMetaclass" qualifier="langchain.tools.base" value="%3Cclass %27langchain.tools.python.tool.PythonREPLTool%27&gt;" isContainer="True" />
+<var name="TWILIO_ACCOUNT_SID" type="NoneType" qualifier="builtins" value="None" />
+<var name="TWILIO_AUTH_TOKEN" type="NoneType" qualifier="builtins" value="None" />
+<var name="TWILIO_FROM_NUMBER" type="NoneType" qualifier="builtins" value="None" />
+<var name="Tool" type="ToolMetaclass" qualifier="langchain.tools.base" value="%3Cclass %27langchain.tools.base.Tool%27&gt;" isContainer="True" />
+<var name="agent" type="AgentExecutor" qualifier="langchain.agents.agent" value="AgentExecutor%28memory=None%2C callbacks=None%2C callback_manager=None%2C verbose=True%2C tags=None%2C metadata=None%2C agent=OpenAIFunction...iterations=15%2C max_execution_time=None%2C early_stopping_method=%27force%27%2C handle_parsing_errors=False%2C trim_intermediate_steps=-1%29" isContainer="True" />
+<var name="anthropic_api_key" type="str" qualifier="builtins" value="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" />
+<var name="api_key" type="str" qualifier="builtins" value="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" />
+<var name="code" type="str" qualifier="builtins" value="The number of jobs in the dataframe is 311." />
+<var name="df" type="DataFrame" qualifier="pandas.core.frame" value="%5B%27Employee_Name%27%2C %27EmpID%27%2C %27MarriedID%27%2C %27MaritalStatusID%27%2C %27GenderID%27%2C %27EmpStatusID%27%2C %27DeptID%27%2C %27PerfScoreID%27%2C %27FromDiversityJobFairID%27%2C %27Salary%27%2C %27Termd%27%2C %27PositionID%27%2C %27Position%27%2C %27State%27%2C %27Zip%27%2C %27DOB%27%2C %27Sex%27%2C %27MaritalDesc%27%2C %27CitizenDesc%27%2C %27HispanicLatino%27%2C %27RaceDesc%27%2C %27DateofHire%27%2C %27DateofTermination%27%2C %27TermReason%27%2C %27EmploymentStatus%27%2C %27Department%27%2C %27ManagerName%27%2C %27ManagerID%27%2C %27RecruitmentSource%27%2C %27PerformanceScore%27%2C %27EngagementSurvey%27%2C %27EmpSatisfaction%27%2C %27SpecialProjectsCount%27%2C %27LastPerformanceReview_Date%27%2C %27DaysLateLast30%27%2C %27Absences%27%5D %5B0         Adinolfi%2C Wilson  K  10026          0                0         1   %5D %5B1    Ait Sidi%2C Karthikeyan     10084          1                1         1   %5D %5B2           Akinkuolie%2C Sarah  10196          1                1         0   %5D %5B3                Alagbe%2CTrina  10088          1                1         0   %5D %5B4            Anderson%2C Carol   10069          0                2         0   %5D %5B..                        ...    ...        ...     ..." isContainer="True" shape="(311, 36)" />
+<var name="serper_api_key" type="str" qualifier="builtins" value="bd4187d5f23e6a405a6470fe4fe03e61742cccf4" />
+</xml>
+Aborted!
