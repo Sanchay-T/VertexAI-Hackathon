@@ -7,6 +7,7 @@ from .models import *
 import vertex_ai_process
 import threading
 import os
+from agent.final_Agent import extract_resume_information
 
 
 
@@ -186,6 +187,12 @@ def apply_for_job(request , job_id):
     filename = os.path.basename(job_application.resume.name)
 
     print(filename)
+
+    output = extract_resume_information(filename)
+    print("\n\n\n\This is the resume output")
+    print(output)
+    print("********\n\n\n")
+
 
     # threading.Thread(target=vertex_ai_process.extract_name_table , args=[filename]).start()
 
