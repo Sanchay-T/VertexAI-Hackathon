@@ -21,6 +21,7 @@ urlpatterns = [
     path("apply_for_job/<int:job_id>/", views.apply_for_job , name="apply_for_job"),
     path("jobs_applied/", views.jobs_applied , name="jobs_applied"),
     path("job_insights/<int:job_id>", views.job_details , name="job_insights"),
+    path("analyze_hr_query", views.analyze_hr_query , name="analyze_hr_query"),
 ]
 
 

@@ -1,39 +1,107 @@
-<!-- login.html -->
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="{% static 'account/images/favicon_logo.png' %}" type="image/png">
-    
-    <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+{% block title %}Job Applicants{% endblock %}
 
-    <link rel="stylesheet" href="{% static 'account/css/style.css' %}">
-    <script src="https://kit.fontawesome.com/63028e8eda.js" crossorigin="anonymous"></script>
+{% block customCSS %}
+<style>
+    /* Custom CSS for the search box and output section */
+    .search-box {
+        margin-bottom: 20px;
+    }
 
-    <style>
-        body {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .output-section {
+        display: none;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f8f8f8;
+    }
 
-        .card {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-</head>
+    .output-section p {
+        margin-bottom: 10px;
+    }
+</style>
+{% endblock customCSS %}
 
-<body>
-  <h3>{{job_insight.items}}</h3>
-  {% for key , value in job_insight.items %}
-    <h3>{{key}} : {{value}}</h3>
-  {% endfor %}
-</body>
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Job Applicants</h1>
+    <div class="search-box">
+        <form id="search-form">
+            <label for="search-input">Search Job Applicants:</label>
+            <textarea type="text" id="search-input" class="form-control mb-2" placeholder="Enter your query..."></textarea>
 
-</html>
+            <button type="submit" class="btn btn-primary submit-btn">Search</button>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Experience</th>
+                        <th>Skills</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for job_applicant in job_applicants %}
+                    <tr>
+                        <td>{{ job_applicant.applicant.username }}</td>
+                        <td>{{ job_applicant.applicant.email }}</td>
+                        <td>{{ job_applicant.employee_info.experience }}</td>
+                        <td>{{ job_applicant.employee_info.skills }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="output-section">
+        <h2>Output Section</h2>
+        <p id="output-message">Output message will appear here</p>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block customJS %}
+<script>
+    // JavaScript code for search functionality and output section
+    const searchInput = document.getElementById('search-input');
+    const outputSection = document.querySelector('.output-section');
+    const outputMessage = document.getElementById('output-message');
+    const searchForm = document.getElementById('search-form');
+
+
+    searchForm.addEventListener('submit', function (event) {
+        event.preventDefault()
+        const searchTerm = searchInput.value.toLowerCase();
+        
+        // AJAX call to update output section
+        $.ajax({
+            type: 'GET',
+            url: '{% url "analyze_hr_query" %}',
+            data: {
+                'search_term': searchTerm,
+                'csrfmiddlewaretoken' : '{{csrf_token}}',
+                'job_id' : '{{ job_id }}'
+            },
+            success: function (response) {
+                outputMessage.textContent = response;
+                outputSection.classList.add('active');
+                console.log(response)
+            },
+            error: function (xhr, status, error) {
+                console.error('Error occurred:', error);
+            }
+        });
+    });
+
+    // Example for updating the output section
+    // You can replace this with your GPT output logic
+    outputMessage.textContent = 'This is an example output message.';
+    outputSection.style.display = 'block';
+</script>
+{% endblock customJS %}

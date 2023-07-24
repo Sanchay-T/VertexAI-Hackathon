@@ -1,0 +1,22 @@
+[34m[1mwandb[39m[22m: Streaming LangChain activity to W&B at https://wandb.ai/zestt/Claude/runs/a8hmiuli
+[34m[1mwandb[39m[22m: `WandbTracer` is currently in beta.
+[34m[1mwandb[39m[22m: Please report any issues to https://github.com/wandb/wandb/issues with the tag `langchain`.
+[34m[1mwandb[39m[22m: [33mWARNING[39m Skipping trace saving - unable to safely convert LangChain Run into W&B Trace due to: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/Users/sanchaythalnerkar/Desktop/HRGPT/agent/claudefinal.py", line 109, in <module>
+    output = chat(messages)
+             ^^^^^^^^^^^^^^
+  File "/Users/sanchaythalnerkar/Desktop/HRGPT/env/lib/python3.11/site-packages/langchain/chat_models/base.py", line 349, in __call__
+    generation = self.generate(
+                 ^^^^^^^^^^^^^^
+  File "/Users/sanchaythalnerkar/Desktop/HRGPT/env/lib/python3.11/site-packages/langchain/chat_models/base.py", line 125, in generate
+    raise e
+  File "/Users/sanchaythalnerkar/Desktop/HRGPT/env/lib/python3.11/site-packages/langchain/chat_models/base.py", line 115, in generate
+    self._generate_with_cache(
+  File "/Users/sanchaythalnerkar/Desktop/HRGPT/env/lib/python3.11/site-packages/langchain/chat_models/base.py", line 262, in _generate_with_cache
+    return self._generate(
+           ^^^^^^^^^^^^^^^
+  File "/Users/sanchaythalnerkar/Desktop/HRGPT/env/lib/python3.11/site-packages/langchain/chat_models/anthropic.py", line 111, in _generate
+    stream_resp = self.client.completions.create(**params,max_tokens_to_sample=3000, stream=True)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: anthropic.resources.completions.Completions.create() got multiple values for keyword argument 'max_tokens_to_sample'

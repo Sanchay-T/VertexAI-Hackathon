@@ -1,0 +1,4 @@
+
+[1m> Entering new AgentExecutor chain...
+[34m[1mwandb[39m[22m: Streaming LangChain activity to W&B at https://wandb.ai/zestt/Claude/runs/mf0tyuzf
+[34m[1mwandb[39m[22m: `WandbTracer` is currently in beta.

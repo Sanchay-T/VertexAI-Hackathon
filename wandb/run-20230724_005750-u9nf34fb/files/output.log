@@ -1,0 +1,17 @@
+[34m[1mwandb[39m[22m: Streaming LangChain activity to W&B at https://wandb.ai/zestt/Claude/runs/u9nf34fb
+[34m[1mwandb[39m[22m: `WandbTracer` is currently in beta.
+[34m[1mwandb[39m[22m: Please report any issues to https://github.com/wandb/wandb/issues with the tag `langchain`.
+[1m> Entering new  chain...
+[32m[1mInvoking: `python_repl_ast` with `len(df)`
+[36m[1m311[32mThere are 311 rows in the dataframe.
+[1m> Finished chain.
+[1m> Entering new  chain...
+[32m[1mInvoking: `Python_REPL` with `def fibonacci(n):
+[32m[1m    if n <= 0:
+[32m[1m        return 0
+[32m[1m    elif n == 1:
+[32m[1m        return 1
+[32m[1m    else:
+[32m[1m        return fibonacci(n-1) + fibonacci(n-2)
+[32m[1mfibonacci(10)`
+[32m[1mThe 10th Fibonacci number is 55.

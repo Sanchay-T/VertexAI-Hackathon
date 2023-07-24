@@ -21,8 +21,9 @@ class CustomUser(AbstractUser):
         return "{}".format(self.username)
 
 class Employee_Info(models.Model):
-    employee = models.ForeignKey(CustomUser , on_delete=models.CASCADE)
     candidate_info = models.TextField(max_length=1000)
+    skills = models.TextField(max_length=1000)
+    experience = models.TextField(max_length=1000)
 
 
 class Company(models.Model):
@@ -80,11 +81,13 @@ class JobApplication(models.Model):
         default="Pending"
     )
     application_date = models.DateField(auto_now_add=True)
+    employee_info = models.OneToOneField(Employee_Info , on_delete=models.CASCADE)
+
     
     def __str__(self):
         return "{}_{}".format(self.job.job_title , self.applicant.email)
 
 
 class JobInsightData(models.Model):
-    job = models.ForeignKey(JobPost, on_delete=models.CASCADE)
-    csv_file = models.FileField(upload_to="csv_files")
+    job = models.OneToOneField(JobPost, on_delete=models.CASCADE)
+    job_application_data = models.JSONField(null=True)
