@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
+# os.environ["OPENAI_API_KEY"]
 
-load_dotenv("../.env")
 from langchain.chat_models import ChatOpenAI
 from langchain.experimental.plan_and_execute import PlanAndExecute, load_agent_executor, load_chat_planner
 from langchain.llms import OpenAI
@@ -12,12 +12,18 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import create_extraction_chain, create_extraction_chain_pydantic
 from langchain.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
+from .githubanalyzer import GithubProfileAnalyzer
 import os
 import json
 import requests
+env_path = os.path.join(os.getcwd() , ".env")
 
-api_key = os.getenv("OPENAI_API_KEY")
-# serper_api_key = os.getenv("SERP_API_KEY")
+load_dotenv(env_path)
+openapi_key = os.getenv('OPENAI_API_KEY')
+serper_api_key = os.getenv("SERP_API_KEY")
+anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
+print(anthropic_api_key)
+
 
 from typing import Optional, List
 from pydantic import BaseModel, Field
@@ -48,25 +54,71 @@ class Applicant(BaseModel):
 
 from langchain.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field, validator
+
+from account.models import JobInsightData
 from typing import List
 
 from langchain.document_loaders import PyPDFLoader
 
 
+
+
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.vectorstores import Chroma
+from langchain.prompts import PromptTemplate
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import Chroma
+from langchain.chains import LLMChain
+from langchain.chains import RetrievalQA
+
+
+
+
+def get_insights(data , query):
+
+    text_splitter = RecursiveCharacterTextSplitter(
+    # Set a really small chunk size, just to show.
+    chunk_size = 1000,
+    chunk_overlap  = 100,
+    length_function = len,
+    )
+
+    texts = text_splitter.create_documents([data])
+
+    embeddings = OpenAIEmbeddings()
+
+    docsearch = Chroma.from_documents(texts, embeddings)
+
+    # docs = db.similarity_search(query)
+
+    llm = ChatOpenAI(temperature=0.0)
+
+    qa = RetrievalQA.from_chain_type(llm=OpenAI(), chain_type="stuff", retriever=docsearch.as_retriever(search_kwargs={"k": 3}))
+
+    output = qa.run(query)
+    print(output)
+
+
+    return output
+
+
+
+
+
+
+
 def analyze_github_profile(profile_url):
     load_dotenv(".env")
-    os.environ["LANGCHAIN_WANDB_TRACING"] = "true"
-    os.environ["WANDB_PROJECT"] = "Claude"
-    anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
-    serper_api_key = os.getenv("SERP_API_KEY")
 
     analyzer = GithubProfileAnalyzer(anthropic_api_key=anthropic_api_key, serper_api_key=serper_api_key)
     return analyzer.analyze(profile_url)
 
 
-def extract_resume_information(filename):
+def extract_resume_information(filename , job):
+    pdf_path = os.path.join(os.getcwd(), "media", "resumes", filename)
     # Load PDF
-    loader = PyPDFLoader(f"../media/resumes/{filename}")
+    loader = PyPDFLoader(pdf_path)
+
     # media/resumes/Poojan_vig_resume.pdf
     final = loader.load()
     resume = final[0].page_content
@@ -84,11 +136,32 @@ def extract_resume_information(filename):
 
     output = llm(messages)
 
-    json_out = json.loads(output.content)
+    output = output.content
+
+    json_out = json.loads(output)
+
+    git_out = None
 
     if json_out['Github_Url']:
-        analyze_github_profile(json_out['Github_Url'])
-    
+        print("Inside github agent " , json_out['Github_Url'])
+        git_out = analyze_github_profile(json_out['Github_Url'])
+        print("github_content " , git_out)
+
+
+    github_content = git_out
+
+    final_str = output + "\n" +  github_content + "\n"
+
+    print(final_str)
+
+
+
+    job_data , create = JobInsightData.objects.get_or_create(job=job)
+    print(job_data)
+
+    job_initial_data = job_data.job_application_data if job_data.job_application_data !="null" else ""
+    job_data.job_application_data  = job_data.job_application_data + final_str
+    job_data.save()
     
 
 

@@ -4,10 +4,9 @@ from django.urls import reverse
 from django.http import HttpResponse , JsonResponse
 from django.contrib.auth.decorators import login_required
 from .models import *
-import vertex_ai_process
 import threading
 import os
-from agent.final_Agent import extract_resume_information
+from agent.final_Agent import extract_resume_information , get_insights
 
 
 
@@ -151,8 +150,8 @@ def job_details(request , job_id):
     print(json_string)
 
     
-    jobpost_data , create = JobInsightData.objects.get_or_create(job=job)
-    jobpost_data.job_application_data = json_string
+    # jobpost_data , create = JobInsightData.objects.get_or_create(job=job)
+    # jobpost_data.job_application_data = json_string
 
 
     context = {
@@ -188,7 +187,7 @@ def apply_for_job(request , job_id):
 
     print(filename)
 
-    output = extract_resume_information(filename)
+    output = extract_resume_information(filename , job)
     print("\n\n\n\This is the resume output")
     print(output)
     print("********\n\n\n")
@@ -210,10 +209,16 @@ def jobs_applied(request):
 
 
 def analyze_hr_query(request):
+    print("here in the analyze_hr_query")
     print(request.POST)
+    print(type(request.POST.get('search_term')))
 
     job_id = request.POST.get("job_id")
-    print(JobInsightData.objects.filter(job_id=job_id).first().job_application_data)
-    return HttpResponse("Success")
+    job_data = JobInsightData.objects.filter(job_id=job_id).first().job_application_data
+    print(job_data)
+
+    response = get_insights(job_data , request.POST.get("search_term"))
+
+    return HttpResponse(response)
 
 

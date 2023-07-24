@@ -7,10 +7,9 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.prompts import ChatPromptTemplate
 from langchain.output_parsers import PydanticOutputParser
 from typing import Optional, List
+import json
 
 load_dotenv(".env")
-os.environ["LANGCHAIN_WANDB_TRACING"] = "true"
-os.environ["WANDB_PROJECT"] = "Claude"
 
 
 class ContributionsByDay(BaseModel):
@@ -66,13 +65,14 @@ class GithubProfileAnalyzer:
         self.text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=2500, chunk_overlap=300, length_function=len
         )
-        self.template_string = """You are an expert Github Analyst and experiece in leading top projects and an awesome project manager.Your job is to analyse this github profile : {docs} and extract key contents in json {format_instructions} \n Make sure your responce is complete in proper json. \n If you cannot find the information needed for the output schema add None."""
+        self.template_string = """You are an expert Github Analyst and experiece in leading top projects and an awesome project manager.Your job is to analyse this github profile : {docs} and extract key contents in json {format_instructions} \n Make sure your responce is complete in proper json. \n If you cannot find the information needed for the output schema add None.Don't add ```json``` in the output. \n"""
 
     def clean_text(self, text):
         text = text.replace("\n", " ").replace("\xa0", " ")
         return " ".join(text.split())
 
     def analyze(self, github_url):
+
         loader = WebBaseLoader(github_url)
         github_profile = loader.load()[0].page_content
         github_profile = self.clean_text(github_profile)
@@ -84,13 +84,8 @@ class GithubProfileAnalyzer:
             docs=github_profile, format_instructions=format_instructions
         )
         output = self.model(messages)
-        return pydantic_parser.parse(output.content)
+        output = output.content.replace("```json\n", '"').replace("\n```" , '"')
+        print(output)
+        return output
 
 
-if __name__ == "__main__":
-    analyzer = GithubProfileAnalyzer(
-        anthropic_api_key=os.getenv("ANTHROPIC_API_KEY"),
-        serper_api_key=os.getenv("SERP_API_KEY"),
-    )
-    result = analyzer.analyze("https://github.com/poojanvig")
-    print(result)
