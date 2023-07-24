@@ -188,13 +188,12 @@ def apply_for_job(request , job_id):
 
     print(filename)
 
-    output = extract_resume_information(filename)
+    threading.Thread(target=extract_resume_information , args=[filename]).start()
     print("\n\n\n\This is the resume output")
     print(output)
     print("********\n\n\n")
 
 
-    # threading.Thread(target=vertex_ai_process.extract_name_table , args=[filename]).start()
 
     
     return HttpResponse("Applied Successfully.")
