@@ -22,7 +22,12 @@ def base_dashboard(request):
     if request.user.user_type == 1:
         return render(request , "account/hr/hr_dashboard.html")
     else:
-        return render(request , "account/employee/emp_dashboard.html")
+        jobs_applied = JobApplication.objects.filter(applicant=request.user).select_related('job' , 'applicant' , 'employee_info').all()
+
+        context = {
+            "jobs_applied" : jobs_applied
+        }
+        return render(request , "account/employee/emp_dashboard.html" , context=context)
 
 def home(request):
     return render(request , "account/home.html")
@@ -129,25 +134,25 @@ def job_details(request , job_id):
     job_applicants = JobApplication.objects.filter(job = job).select_related('job' , 'applicant').all()
     print(job_applicants)
 
-    mydict = {
-        'Name' : [],
-        'Email' : [],
-        "Skills" : [],
-        "Experience" : [],
-        "Applicant Status" : []
-    }
+    # mydict = {
+    #     'Name' : [],
+    #     'Email' : [],
+    #     "Skills" : [],
+    #     "Experience" : [],
+    #     "Applicant Status" : []
+    # }
 
-    for job_applicant in job_applicants:
-        mydict['Name'].append(job_applicant.applicant.username)
-        mydict['Email'].append(job_applicant.applicant.email)
-        mydict['Skills'].append(job_applicant.employee_info.skills)
-        mydict['Experience'].append(job_applicant.employee_info.experience)
-        mydict['Experience'].append(job_applicant.employee_info.experience)
+    # for job_applicant in job_applicants:
+    #     mydict['Name'].append(job_applicant.employee_info.name)
+    #     mydict['Email'].append(job_applicant.applicant.email)
+    #     mydict['Skills'].append(job_applicant.employee_info.skills)
+    #     mydict['Experience'].append(job_applicant.employee_info.experience)
+    #     mydict['Experience'].append(job_applicant.employee_info.experience)
 
 
-    # convert mydict to jsonstring 
-    json_string = json.dumps(mydict)
-    print(json_string)
+    # # convert mydict to jsonstring 
+    # json_string = json.dumps(mydict)
+    # print(json_string)
 
     
     # jobpost_data , create = JobInsightData.objects.get_or_create(job=job)
@@ -177,12 +182,13 @@ def apply_for_job(request , job_id):
     resume = request.FILES['resume']
     # if JobApplication.objects.filter(job=job , applicant=request.user).exists():
         # return HttpResponse("Job Already Applied.")
-    employee = Employee_Info.objects.create(candidate_info = "Testing Info" , experience = "5 years" , skills = "Django")
+    employee = Employee_Info()
+
     employee.save()
-    job_application = JobApplication.objects.create(job=job , applicant=request.user , resume = resume , employee_info = employee)
-    job_application.save()
     
 
+    job_application = JobApplication.objects.create(job=job , applicant=request.user , resume = resume , employee_info=employee)
+    job_application.save()
     filename = os.path.basename(job_application.resume.name)
 
     print(filename)
@@ -191,6 +197,15 @@ def apply_for_job(request , job_id):
     print("\n\n\n\This is the resume output")
     print(output)
     print("********\n\n\n")
+
+
+    # employee
+    employee.experience = output['Experience'] 
+    employee.skills = output['Skills'].replace("[" , "").replace("]" , "")
+    employee.name = output['Name']  
+    employee.save()
+    job_application.employee_info = employee
+    job_application.save()
 
 
 
@@ -209,8 +224,6 @@ def jobs_applied(request):
 
 def analyze_hr_query(request):
     print("here in the analyze_hr_query")
-    print(request.POST)
-    print(type(request.POST.get('search_term')))
 
     job_id = request.POST.get("job_id")
     job_data = JobInsightData.objects.filter(job_id=job_id).first().job_application_data

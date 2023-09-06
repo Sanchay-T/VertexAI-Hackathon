@@ -74,14 +74,40 @@ TEMPLATES = [
 WSGI_APPLICATION = "google_vertex_ai.wsgi.application"
 
 
+# Supabase Creds 
+SUPABASE_URL = 'https://kncdifjdbbkkrawpjqte.supabase.co'
+SUPABASE_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtuY2RpZmpkYmJra3Jhd3BqcXRlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTQwMjU0MzIsImV4cCI6MjAwOTYwMTQzMn0.66BepDH6hdZVmw5LeVnw4kGOaF1OCA96bXFPXnlSsNY'
+
+
+
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": BASE_DIR / "db.sqlite3",
+    # },
+
+    # postgres
+    # 5432
+    # db.kncdifjdbbkkrawpjqte.supabase.co
+    # postgres
+    'default': {
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'postgres',
+
+        'HOST': 'db.kncdifjdbbkkrawpjqte.supabase.co',
+
+        'PORT': '5432',
+
+        'USER': 'postgres',
+
+        'PASSWORD': 'WB1U51t11oouNbCx' 
     }
+
 }
 
 

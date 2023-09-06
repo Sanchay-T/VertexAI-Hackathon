@@ -21,6 +21,7 @@ class CustomUser(AbstractUser):
         return "{}".format(self.username)
 
 class Employee_Info(models.Model):
+    name = models.CharField(max_length=250, null=False)
     candidate_info = models.TextField(max_length=1000)
     skills = models.TextField(max_length=1000)
     experience = models.TextField(max_length=1000)

@@ -7,3 +7,5 @@ admin.site.register(JobPost)
 admin.site.register(JobApplication)
 admin.site.register(JobInsightData)
 admin.site.register(Company)
+admin.site.register(Employee_Info)
+

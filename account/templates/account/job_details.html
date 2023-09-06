@@ -9,16 +9,31 @@
         margin-bottom: 20px;
     }
 
+  
+
     .output-section {
-        display: none;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f8f8f8;
+        opacity: 0;
+        height: 0;
+        visibility: hidden;
+        transition: all 0.5s ease-out;
+        background: linear-gradient(135deg, #a8edea, #fed6e3); /* Gradient background */
+        color: #333; /* Dark text color for contrast */
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        overflow: hidden;
     }
 
-    .output-section p {
-        margin-bottom: 10px;
+    /* Animation to visible state */
+    .output-section.animate {
+        opacity: 1;
+        height: auto;
+        /* Adjust this if you know the exact height */
+        visibility: visible;
+    }
+
+
+    .skills-column {
+        width: 35%;
     }
 </style>
 {% endblock customCSS %}
@@ -29,34 +44,34 @@
     <div class="search-box">
         <form id="search-form">
             <label for="search-input">Search Job Applicants:</label>
-            <textarea type="text" id="search-input" class="form-control mb-2" placeholder="Enter your query..."></textarea>
+            <textarea type="text" id="search-input" class="form-control mb-2"
+                placeholder="Enter your query..."></textarea>
 
             <button type="submit" class="btn btn-primary submit-btn">Search</button>
         </form>
     </div>
 
     <div class="output-section">
-        <h2>Output Section</h2>
-        <p id="output-message">Output message will appear here</p>
+        <p id="output-message"></p>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <table class="table">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Experience</th>
-                        <th>Skills</th>
+                        <th class="skills-column">Skills</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for job_applicant in job_applicants %}
                     <tr>
-                        <td>{{ job_applicant.applicant.username }}</td>
+                        <td>{{ job_applicant.employee_info.name }}</td>
                         <td>{{ job_applicant.applicant.email }}</td>
                         <td>{{ job_applicant.employee_info.experience }}</td>
-                        <td>{{ job_applicant.employee_info.skills }}</td>
+                        <td class="skills-column">{{ job_applicant.employee_info.skills }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -73,34 +88,40 @@
     // JavaScript code for search functionality and output section
     const searchInput = document.getElementById('search-input');
     const outputSection = document.querySelector('.output-section');
-    const outputMessage = document.getElementById('output-message');
+    const outputMessage = $('#output-message');
     const searchForm = document.getElementById('search-form');
-
+    
+    let converter = new showdown.Converter();
 
     searchForm.addEventListener('submit', function (event) {
         event.preventDefault()
         const searchTerm = searchInput.value.toLowerCase();
         console.log(searchTerm)
-        
+
         // AJAX call to update output section
         $.ajax({
             type: 'POST',
             url: '{% url "analyze_hr_query" %}',
             data: {
                 'search_term': searchTerm,
-                'csrfmiddlewaretoken' : '{{csrf_token}}',
-                'job_id' : '{{ job_id }}'
+                'csrfmiddlewaretoken': '{{csrf_token}}',
+                'job_id': '{{ job_id }}'
             },
             success: function (response) {
-                outputMessage.textContent = response;
-                outputSection.classList.add('active');
-                console.log(response)
+                let html = converter.makeHtml(response);
+
+                outputMessage.html(html);
+
+                outputSection.classList.add('animate' , 'mb-4' , 'p-4');
+                console.log(html)
             },
             error: function (xhr, status, error) {
                 console.error('Error occurred:', error);
             }
         });
     });
+
+
 
     // Example for updating the output section
     // You can replace this with your GPT output logic
